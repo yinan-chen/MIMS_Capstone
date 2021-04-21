@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MIMS Capstone</title>
+    <link rel="icon">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Others -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Personal Space -->
+        <div class="col-1 offset-1" style="padding-top: 60px;">
+            <img class="img-fluid" src="./img/icon/TropicalFruit.png" width="75%"/>
+        </div>
+        <div class="col-7 offset-1">
+            <img class="img-fluid" src="./img/house_top.png" />
+        </div>
+    </div>
+    <div class="row">
+        <!-- Open Spaces -->
+        <div class="col-1 offset-1">
+            <img class="img-fluid" src="./img/icon/BlackFruit_select.png" width="75%"/>
+            <br><br>
+            <img class="img-fluid" src="./img/icon/RedFruit.png" width="75%"/>
+            <br><br>
+            <img class="img-fluid" src="./img/icon/Herbal.png" width="75%"/>
+            <br><br>
+            <img class="img-fluid" src="./img/icon/Creaminess.png" width="75%"/>
+        </div>
+
+        <!-- Sessions -->
+        <div class="col-7 offset-1">
+            <!-- add new session -->
+            <div class="card" style="margin:10px; padding: 10px;">
+                <div class="d-grid gap-2 col-3 mx-auto">
+                    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#createNewSessionFormModal">New Session</button>
+                </div>
+            </div>
+
+            <!-- Form Modal -->
+            <div class="modal fade" id="createNewSessionFormModal" tabindex="-1" aria-labelledby="createNewSessionFormModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="createNewSessionLabel">Create a New Session</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="newSessionForm">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="sessionTopic" class="col-form-label">Session Topic</label>
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="text" id="sessionTopic" class="form-control" aria-describedby="passwordHelpInline">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="sessionDescription" class="col-form-label">Description</label>
+                                    </div>
+                                    <div class="col-8">
+                                        <textarea class="form-control" id="sessionDescription" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-check form-switch">
+                                    <label class="form-check-label" for="privateSwitch">Private</label>
+                                    <input class="form-check-input" type="checkbox" id="privateSwitch">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" onclick="newSessionFormSubmit()">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- available sessions -->
+            <div id="sessions">
+                <div class="card" style="margin:10px">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <h5 class="card-title">Session Topic</h5>
+                                <p class="card-text">Description</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- house bottom -->
+            <img class="img-fluid" src="./img/house_btn.png" />
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+<script src="./js/main.js"></script>
+
+</body>
+</html>
