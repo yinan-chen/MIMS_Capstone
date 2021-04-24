@@ -27,11 +27,11 @@ function createNewSessionHTML(topic, description, privateSwitch) {
     session_str += "</div></div>" +
                         "<div class='col-md-6'>" +
                             "<div class='card-body'>" +
-                                "<h5 class='card-title'>Card title</h5>" +
+                                "<h5 class='card-title'>Members</h5>" +
                                 "<p class='card-text'></p>" +
                                 "<p class='card-text'><small class=\"text-muted\">Last updated 3 hours ago</small></p>" +
                                 `<div class="d-grid gap-2 col-1.5 mx-auto join-btn">` + 
-                                    `<button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#createNewSessionFormModal">Join</button>` +
+                                    `<button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinFormModal">Join</button>` +
                                 `</div>` +
                             "</div></div></div></div>";
 
