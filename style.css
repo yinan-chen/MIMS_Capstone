@@ -18,3 +18,10 @@ body {
     display: block;
 }
 
+.join-btn {
+    position: absolute;
+    left: 84.8%;
+    right: 2.36%;
+    top: 43.75%;
+    bottom: 36.61%;
+}

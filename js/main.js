@@ -30,6 +30,9 @@ function createNewSessionHTML(topic, description, privateSwitch) {
                                 "<h5 class='card-title'>Card title</h5>" +
                                 "<p class='card-text'></p>" +
                                 "<p class='card-text'><small class=\"text-muted\">Last updated 3 hours ago</small></p>" +
+                                `<div class="d-grid gap-2 col-1.5 mx-auto join-btn">` + 
+                                    `<button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#createNewSessionFormModal">Join</button>` +
+                                `</div>` +
                             "</div></div></div></div>";
 
     return session_str;
