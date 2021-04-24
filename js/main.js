@@ -16,9 +16,11 @@ function createNewSessionHTML(topic, description, privateSwitch) {
     let session_str = "<div class='card' style='margin:10px'>" +
                             "<div class='row g-0'>" +
                                 "<div class='col-md-6'>" +
-                                    "<div class='card-body'>";
+                                    "<div class='card-body left-card'>";
 
+    session_str += "<h6 >Session Info</h2>";
     session_str += "<h5 class='card-title'>" + topic + "</h5>";
+    session_str += "<h6>Description</h6>";
     session_str += "<p class='card-text'>" + description + "</p>";
     session_str += "<p class='card-text'><small class='text-muted'>" + "Private Switch: " + privateSwitch + "</small></p>";
 
@@ -26,7 +28,7 @@ function createNewSessionHTML(topic, description, privateSwitch) {
                         "<div class='col-md-6'>" +
                             "<div class='card-body'>" +
                                 "<h5 class='card-title'>Card title</h5>" +
-                                "<p class='card-text'>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>" +
+                                "<p class='card-text'></p>" +
                                 "<p class='card-text'><small class=\"text-muted\">Last updated 3 hours ago</small></p>" +
                             "</div></div></div></div>";
 
