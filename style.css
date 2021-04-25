@@ -30,7 +30,19 @@ body {
     height: 224px;
 }
 
+.countDownTimer {
+    position: absolute;
+    left: 80%;
+    right: 2%;
+    top: 5%;
+}
+
+.clockImg {
+    float: left;
+    margin-right: 5px;
+}
+
 .sessionMembersPicture {
     margin-bottom: 10px;
-    height: 50px;
+    height: 45px;
 }
