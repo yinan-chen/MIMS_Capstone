@@ -28,6 +28,10 @@ function createNewSessionHTML(topic, description, privateSwitch) {
                         "<div class='col-md-6'>" +
                             "<div class='card-body'>" +
                                 "<h5 class='card-title'>Members</h5>" +
+                                `<div class="countDownTimer">` +
+                                    `<img class="rounded-circle clockImg" src="./img/icon/Clock Icon.png">` +
+                                    `<p class="card-text"><small class="text-muted">Ends in <span>--:--</span></small></p>` +
+                                `</div>` +
                                 "<p class='card-text'></p>" +
                                 "<p class='card-text'><small class=\"text-muted\">Last updated 3 hours ago</small></p>" +
                                 `<div class="d-grid gap-2 col-1.5 mx-auto join-btn">` + 

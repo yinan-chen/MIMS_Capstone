@@ -1,4 +1,4 @@
-var countDownTimeInSec = 60 * 5;
+var countDownTimeInSec = 60 * 10;
 
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
