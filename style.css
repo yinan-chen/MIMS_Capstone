@@ -25,3 +25,12 @@ body {
     top: 43.75%;
     bottom: 36.61%;
 }
+
+.card {
+    height: 224px;
+}
+
+.sessionMembersPicture {
+    margin-bottom: 10px;
+    height: 50px;
+}
