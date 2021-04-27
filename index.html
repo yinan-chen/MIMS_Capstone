@@ -185,11 +185,9 @@
 <script src="./js/timer.js"></script>
 <script>
     // add a pre-existing private session card
-    let topic = "Info 205 Group Study";
-    let description = `- GDPR\n- CCPA`;
     let session = $('#sessions');
     let sessions_str = session.html();
-    sessions_str = createNewSessionHTML(topic, description, true) + sessions_str;
+    sessions_str = createNewSessionHTML("Info 205 Group Study", `- GDPR\n- CCPA`, true) + sessions_str;
     session.html(sessions_str);
 </script>
 </body>
