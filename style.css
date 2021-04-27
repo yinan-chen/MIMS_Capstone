@@ -18,6 +18,25 @@ body {
     display: block;
 }
 
+.opaqueLayer {
+    position: absolute;
+    background-color: rgba(50, 50, 93, 0.5);
+    left: 50%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    z-index: 10;
+}
+
+.askPermission {
+    position: absolute;
+    left: 64.31%;
+    right: 15%;
+    top: 40.18%;
+    bottom: 56.77%;    
+    z-index: 11;
+}
+
 .join-btn {
     position: absolute;
     left: 84.8%;
