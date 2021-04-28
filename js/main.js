@@ -33,13 +33,13 @@ function createNewSessionHTML(topic, description, privateSwitch) {
                                 `</div>` +
                                 "<p class='card-text'></p>" +
                                 `<div class="sessionMembers">
-                                     <img class="rounded-circle sessionMembersPicture" src="./img/profilePicture.png">
-                                     <img class="rounded-circle sessionMembersPicture" src="./img/profilePicture.png">
-                                     <img class="rounded-circle sessionMembersPicture" src="./img/profilePicture.png">
+                                     <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                     <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                     <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
                                      <br>
-                                     <img class="rounded-circle sessionMembersPicture" src="./img/profilePicture.png">
-                                     <img class="rounded-circle sessionMembersPicture" src="./img/profilePicture.png">
-                                     <img class="rounded-circle sessionMembersPicture" src="./img/moreProfilePicture.png">
+                                     <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                     <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                     <img class="rounded-circle sessionMembersPicture" src="./img/icon/moreProfilePicture.png">
                                  </div>`;
     if (privateSwitch == false){
         session_str +=          `<div class="d-grid gap-2 col-1.5 mx-auto join-btn">` + 

@@ -23,29 +23,38 @@
 <body>
 
 <div class="container-fluid">
+    <!--<div class="row">-->
+        <!--&lt;!&ndash; Personal Space &ndash;&gt;-->
+        <!--<div class="col-1 offset-1" style="padding-top: 80px;">-->
+            <!--<div class="position-fixed">-->
+                <!--<img class="img-fluid" src="./img/icon/user.png"  width="70%"/>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
     <div class="row">
-        <!-- Personal Space -->
-        <div class="col-1 offset-1" style="padding-top: 60px;">
-            <img class="img-fluid" src="./img/icon/TropicalFruit.png" width="75%"/>
-        </div>
-        <div class="col-7 offset-1">
-            <img class="img-fluid" src="./img/roof.png" />
-        </div>
-    </div>
-    <div class="row">
-        <!-- Open Spaces -->
+        <!-- Nav: user + joined spaces -->
         <div class="col-1 offset-1">
-            <img class="img-fluid" src="./img/icon/BlackFruit_select.png" width="75%"/>
-            <br><br>
-            <img class="img-fluid" src="./img/icon/RedFruit.png" width="75%"/>
-            <br><br>
-            <img class="img-fluid" src="./img/icon/Herbal.png" width="75%"/>
-            <br><br>
-            <img class="img-fluid" src="./img/icon/Creaminess.png" width="75%"/>
+            <div class="position-fixed">
+                <!-- user -->
+                <div id="userIcon">
+                    <img class="img-fluid" src="./img/icon/user.png"/>
+                </div>
+                <!-- spaces -->
+                <div id="spacesIcon">
+                    <img class="img-fluid" src="./img/icon/school.png"/>
+                    <br><br>
+                    <img class="img-fluid" src="./img/icon/class1.png"/>
+                    <br><br>
+                    <img class="img-fluid" src="./img/icon/class2.png"/>
+                </div>
+            </div>
         </div>
 
         <!-- Sessions -->
         <div class="col-7 offset-1">
+            <!-- building roof -->
+            <img class="img-fluid" src="./img/roof.png" />
+
             <!-- add new session -->
             <div class="card" style="margin:10px; padding: 10px;">
                 <div class="d-grid gap-2 col-3 mx-auto">
@@ -105,40 +114,40 @@
             </div>
 
             <!-- Join Modal -->
-            <div class="modal fade" id="joinFormModal" tabindex="-1" aria-labelledby="createNewSessionFormModal" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="createNewSessionLabel">What are you trying to achieve today?</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form id="newSessionForm">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <label for="sessionTopic" class="col-form-label">Session Goal</label>
-                                    </div>
-                                    <div class="col-auto">
-                                        <input type="text" id="sessionTopic" class="form-control" aria-describedby="passwordHelpInline">
-                                    </div>
-                                </div>
-                                <br>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" onclick="newSessionFormSubmit()">Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!--<div class="modal fade" id="joinFormModal" tabindex="-1" aria-labelledby="createNewSessionFormModal" aria-hidden="true">-->
+                <!--<div class="modal-dialog">-->
+                    <!--<div class="modal-content">-->
+                        <!--<div class="modal-header">-->
+                            <!--<h5 class="modal-title" id="createNewSessionLabel">What are you trying to achieve today?</h5>-->
+                            <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+                        <!--</div>-->
+                        <!--<div class="modal-body">-->
+                            <!--<form id="newSessionForm">-->
+                                <!--<div class="row">-->
+                                    <!--<div class="col-4">-->
+                                        <!--<label for="sessionTopic" class="col-form-label">Session Goal</label>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-auto">-->
+                                        <!--<input type="text" id="sessionTopic" class="form-control" aria-describedby="passwordHelpInline">-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<br>-->
+                            <!--</form>-->
+                        <!--</div>-->
+                        <!--<div class="modal-footer">-->
+                            <!--<button type="submit" class="btn btn-primary" data-bs-dismiss="modal" onclick="newSessionFormSubmit()">Submit</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
 
             <!-- available sessions -->
             <div id="sessions">
                 <div class="card" style="margin:10px">
                     <div class="row g-0">
-                        <div class="col-md-6">
+                        <div class="col-6">
                             <div class="card-body left-card">
-                                <h6 >Session Info</h2>
+                                <h2 >Session Info</h2>
                                 <h5 class="card-title">Python Group Study</h5>
                                 <h6>Description</h6>
                                 <p class="card-text">
@@ -148,7 +157,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-6">
                             <div class="card-body">
                                 <h5 class="card-title">Members</h5>
                                 <div class="countDownTimer">
@@ -156,13 +165,13 @@
                                     <p class="card-text"><small class="text-muted">Ends in <span id="time">--:--</span></small></p>
                                 </div>
                                 <div class="sessionMembers">
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/profilePicture.png">
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/profilePicture.png">
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/profilePicture.png">
+                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
                                     <br>
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/profilePicture.png">
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/profilePicture.png">
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/moreProfilePicture.png">
+                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/moreProfilePicture.png">
                                 </div>
                                 <div class="d-grid gap-2 col-1.5 mx-auto join-btn">
                                     <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinFormModal">Join</button>
@@ -172,9 +181,12 @@
                     </div>
                 </div>
             </div>
-
-            <!-- house bottom -->
-            <img class="img-fluid" src="./img/building.png"/>
+        </div>
+    </div>
+    <!-- house bottom -->
+    <div class="row">
+        <div class="col-10 offset-1">
+            <img class="img-fluid" id="buildingImage" src="./img/building.png"/>
         </div>
     </div>
 </div>

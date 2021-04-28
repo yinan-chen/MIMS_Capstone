@@ -7,6 +7,27 @@ body {
     line-height: 24px;
 }
 
+.container-fluid {
+    padding: 50px 30px;
+}
+
+/* nav */
+
+#userIcon, #spacesIcon {
+    padding-top: 40px;
+}
+
+#userIcon img, #spacesIcon img {
+    width: 70%;
+}
+
+/* sessions */
+
+#buildingImage {
+    padding-left: 60px;
+    width: 90%;
+}
+
 .left-card:after {
     content: "";
     background-color: rgb(210, 210, 210);
