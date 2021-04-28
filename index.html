@@ -64,34 +64,39 @@
                         <div class="col-7 cardSeparator">
                             <div class="publicIndicator"></div>
                             <div class="card-body ps-5">
-                                <h6>Session Info</h6>
-                                <h5 class="card-title">Python Group Study</h5>
-                                <p class="mt-3 mb-1">Description</p>
-                                <ol>
-                                    <li>Review Lecture 1 and learn to write data structures</li>
-                                    <li>Start HW 0,1</li>
-                                    <li>- Start HW 0,1</li>
-                                </ol>
+                                <h6 class="card-tertiary">Session Info</h6>
+                                <h5>Python Group Study</h5>
+                                <div class="card-secondary">
+                                    <p class="mt-3 mb-1">Description</p>
+                                    <ol>
+                                        <li>Review Lecture 1 and learn to write data structures</li>
+                                        <li>Start HW 0,1</li>
+                                        <li>- Start HW 0,1</li>
+                                    </ol>
+                                </div>
                             </div>
                         </div>
                         <div class="col-5">
                             <div class="card-body">
-                                <h5 class="card-title">Members</h5>
-                                <div class="countDownTimer">
-                                    <img class="rounded-circle clockImg" src="./img/icon/Clock Icon.png">
-                                    <p class="card-text"><small class="text-muted">Ends in <span id="time">--:--</span></small></p>
-                                </div>
-                                <div class="sessionMembers">
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                    <br>
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/moreProfilePicture.png">
-                                </div>
-                                <div class="d-grid col-1.5 mx-auto join-btn">
-                                    <button class="btn btn-style" type="button" data-bs-toggle="modal" data-bs-target="#joinFormModal">Join</button>
+                                <div class="row g-0">
+                                    <div class="col-7">
+                                        <h6 class="card-tertiary">Members</h6>
+                                        <div class="mt-4">
+                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                            <br>
+                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/moreProfilePicture.png">
+                                        </div>
+                                    </div>
+                                    <div class="col-5">
+                                        <h6 class="card-tertiary"><i class="bi bi-clock card-secondary"></i> Ends in: <span id="time">--:--</span></h6>
+                                        <div class="d-grid mx-3 mt-5">
+                                            <button class="btn btn-style" type="button" data-bs-toggle="modal" data-bs-target="#joinFormModal">Join</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -115,23 +120,24 @@
                         </div>
                         <div class="col-5">
                             <div class="card-body">
-                                <h5 class="card-title">Members</h5>
-                                <div class="countDownTimer">
-                                    <img class="rounded-circle clockImg" src="./img/icon/Clock Icon.png">
-                                    <p class="card-text"><small class="text-muted">Ends in <span id="time">--:--</span></small></p>
-                                </div>
-                                <div class="sessionMembers">
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                    <br>
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/moreProfilePicture.png">
-                                </div>
                                 <div class="opaqueLayer"></div>
-                                <div class="d-grid col-1.5 mx-auto askPermission">
-                                    <button class="btn btn-style" type="button" data-bs-toggle="modal" data-bs-target="#joinFormModal">Ask for permission</button>
+                                <button class="btn btn-style" id="askPermissionBtn" type="button" data-bs-toggle="modal" data-bs-target="#joinFormModal">Ask for permission to join</button>
+                                <div class="row g-0">
+                                    <div class="col-7">
+                                        <h6 class="card-tertiary">Members</h6>
+                                        <div class="mt-4">
+                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                            <br>
+                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/moreProfilePicture.png">
+                                        </div>
+                                    </div>
+                                    <div class="col-5">
+                                        <h6 class="card-tertiary"><i class="bi bi-clock card-secondary"></i> Ends in: <span id="time">--:--</span></h6>
+                                    </div>
                                 </div>
                             </div>
                         </div>
