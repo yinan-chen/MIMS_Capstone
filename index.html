@@ -11,9 +11,11 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-    <!-- Fonts -->
+    <!-- Fonts + icons-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
 
     <!-- Others -->
     <link rel="stylesheet" href="style.css">
@@ -22,43 +24,118 @@
 
 <body>
 
-<div class="container-fluid">
-    <!--<div class="row">-->
-        <!--&lt;!&ndash; Personal Space &ndash;&gt;-->
-        <!--<div class="col-1 offset-1" style="padding-top: 80px;">-->
-            <!--<div class="position-fixed">-->
-                <!--<img class="img-fluid" src="./img/icon/user.png"  width="70%"/>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
+<div class="container-fluid p-4">
     <div class="row">
         <!-- Nav: user + joined spaces -->
         <div class="col-1 offset-1">
-            <div class="position-fixed">
+            <div class="position-fixed" id="navIcons">
                 <!-- user -->
-                <div id="userIcon">
-                    <img class="img-fluid" src="./img/icon/user.png"/>
+                <div class="mt-4">
+                    <img class="img-fluid pt-5" src="./img/icon/user.png"/>
                 </div>
                 <!-- spaces -->
-                <div id="spacesIcon">
-                    <img class="img-fluid" src="./img/icon/school.png"/>
-                    <br><br>
-                    <img class="img-fluid" src="./img/icon/class1.png"/>
-                    <br><br>
-                    <img class="img-fluid" src="./img/icon/class2.png"/>
+                <div class="mt-5">
+                    <img class="img-fluid d-block pt-3" src="./img/icon/school.png"/>
+                    <img class="img-fluid d-block pt-3" src="./img/icon/class1.png"/>
+                    <img class="img-fluid d-block pt-3" src="./img/icon/class2.png"/>
                 </div>
             </div>
         </div>
 
         <!-- Sessions -->
-        <div class="col-7 offset-1">
+        <div class="col-8 offset-1">
             <!-- building roof -->
             <img class="img-fluid" src="./img/roof.png" />
 
             <!-- add new session -->
-            <div class="card" style="margin:10px; padding: 10px;">
-                <div class="d-grid gap-2 col-3 mx-auto">
-                    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#createNewSessionFormModal">New Session</button>
+            <div class="card mx-2 my-3 p-3">
+                <div class="d-grid col-3 mx-auto">
+                    <button class="btn btn-style" type="button" data-bs-toggle="modal" data-bs-target="#createNewSessionFormModal">
+                        <i class="bi bi-plus-circle-fill" id="addNewSessionIcon"></i> New Session
+                    </button>
+                </div>
+            </div>
+
+            <!-- available sessions -->
+            <div id="sessions">
+                <!-- public session example -->
+                <div class="card mx-2 my-3">
+                    <div class="row g-2">
+                        <div class="col-7 cardSeparator">
+                            <div class="publicIndicator"></div>
+                            <div class="card-body ps-5">
+                                <h6>Session Info</h6>
+                                <h5 class="card-title">Python Group Study</h5>
+                                <p class="mt-3 mb-1">Description</p>
+                                <ol>
+                                    <li>Review Lecture 1 and learn to write data structures</li>
+                                    <li>Start HW 0,1</li>
+                                    <li>- Start HW 0,1</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="card-body">
+                                <h5 class="card-title">Members</h5>
+                                <div class="countDownTimer">
+                                    <img class="rounded-circle clockImg" src="./img/icon/Clock Icon.png">
+                                    <p class="card-text"><small class="text-muted">Ends in <span id="time">--:--</span></small></p>
+                                </div>
+                                <div class="sessionMembers">
+                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                    <br>
+                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/moreProfilePicture.png">
+                                </div>
+                                <div class="d-grid col-1.5 mx-auto join-btn">
+                                    <button class="btn btn-style" type="button" data-bs-toggle="modal" data-bs-target="#joinFormModal">Join</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- private session example -->
+                <div class="card mx-2 my-3">
+                    <div class="row g-2">
+                        <div class="col-7">
+                            <div class="privateIndicator"></div>
+                            <div class="card-body ps-5">
+                                <h6>Session Info</h6>
+                                <h5 class="card-title">INFO205 Group Study</h5>
+                                <p class="mt-3 mb-1">Description</p>
+                                <ol>
+                                    <li>Review Lecture 1 and learn to write data structures</li>
+                                    <li>Start HW 0,1</li>
+                                    <li>- Start HW 0,1</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="card-body">
+                                <h5 class="card-title">Members</h5>
+                                <div class="countDownTimer">
+                                    <img class="rounded-circle clockImg" src="./img/icon/Clock Icon.png">
+                                    <p class="card-text"><small class="text-muted">Ends in <span id="time">--:--</span></small></p>
+                                </div>
+                                <div class="sessionMembers">
+                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                    <br>
+                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
+                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/moreProfilePicture.png">
+                                </div>
+                                <div class="opaqueLayer"></div>
+                                <div class="d-grid col-1.5 mx-auto askPermission">
+                                    <button class="btn btn-style" type="button" data-bs-toggle="modal" data-bs-target="#joinFormModal">Ask for permission</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -107,7 +184,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" onclick="newSessionFormSubmit()">Submit</button>
+                            <button type="submit" class="btn btn-style" data-bs-dismiss="modal" onclick="newSessionFormSubmit()">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -140,53 +217,12 @@
                     <!--</div>-->
                 <!--</div>-->
             <!--</div>-->
-
-            <!-- available sessions -->
-            <div id="sessions">
-                <div class="card" style="margin:10px">
-                    <div class="row g-0">
-                        <div class="col-6">
-                            <div class="card-body left-card">
-                                <h2 >Session Info</h2>
-                                <h5 class="card-title">Python Group Study</h5>
-                                <h6>Description</h6>
-                                <p class="card-text">
-                                    - Review Lecture 1 and learn to write data structures<br>
-                                    - Start HW 0,1 <br>
-                                    - Start HW 0,1 <br>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="card-body">
-                                <h5 class="card-title">Members</h5>
-                                <div class="countDownTimer">
-                                    <img class="rounded-circle clockImg" src="./img/icon/Clock Icon.png">
-                                    <p class="card-text"><small class="text-muted">Ends in <span id="time">--:--</span></small></p>
-                                </div>
-                                <div class="sessionMembers">
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                    <br>
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                    <img class="rounded-circle sessionMembersPicture" src="./img/icon/moreProfilePicture.png">
-                                </div>
-                                <div class="d-grid gap-2 col-1.5 mx-auto join-btn">
-                                    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinFormModal">Join</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <!-- house bottom -->
     <div class="row">
-        <div class="col-10 offset-1">
-            <img class="img-fluid" id="buildingImage" src="./img/building.png"/>
+        <div class="col-11 offset-1">
+            <img class="img-fluid ps-5" src="./img/building.png" width="90%"/>
         </div>
     </div>
 </div>
@@ -197,10 +233,10 @@
 <script src="./js/timer.js"></script>
 <script>
     // add a pre-existing private session card
-    let session = $('#sessions');
-    let sessions_str = session.html();
-    sessions_str = createNewSessionHTML("Info 205 Group Study", `- GDPR\n- CCPA`, true) + sessions_str;
-    session.html(sessions_str);
+    // let session = $('#sessions');
+    // let sessions_str = session.html();
+    // sessions_str = createNewSessionHTML("Info 205 Group Study", `- GDPR\n- CCPA`, true) + sessions_str;
+    // session.html(sessions_str);
 </script>
 </body>
 </html>

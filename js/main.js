@@ -13,7 +13,7 @@ function newSessionFormSubmit() {
 }
 
 function createNewSessionHTML(topic, description, privateSwitch) {
-    let session_str = "<div class='card' style='margin:10px'>" +
+    let session_str = "<div class='card m-2'>" +
                             "<div class='row g-0'>" +
                                 "<div class='col-md-6'>" +
                                     "<div class='card-body left-card'>";
@@ -50,7 +50,7 @@ function createNewSessionHTML(topic, description, privateSwitch) {
         session_str +=          `<div class="opaqueLayer">
                                  </div>
                                  <div class="d-grid gap-2 col-1.5 mx-auto askPermission">
-                                    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinFormModal">Ask for permission</button>
+                                    <button class="btn btn-style" type="button" data-bs-toggle="modal" data-bs-target="#joinFormModal">Ask for permission</button>
                                  </div>`;
     }
     session_str += "</div></div></div></div>";
