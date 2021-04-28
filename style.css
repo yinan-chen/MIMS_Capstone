@@ -44,12 +44,12 @@ body {
     /*margin: 10px; */
 }
 
-.card h6 {
-    color: #A5ADBB;
+.card-secondary {
+	color: #6E798C;
 }
 
-.card p, .card li {
-    color: #6E798C;
+.card-tertiary {
+	color: #A5ADBB;
 }
 
 /*.left-card:after {
@@ -63,17 +63,17 @@ body {
     display: block;
 }*/
 
-.countDownTimer {
+/*.countDownTimer {
     position: absolute;
     left: 80%;
     right: 2%;
     top: 5%;
-}
+}*/
 
-.clockImg {
+/*.clockImg {
     float: left;
     margin-right: 5px;
-}
+}*/
 
 .sessionMembersPicture {
     margin-bottom: 10px;
@@ -97,13 +97,13 @@ body {
     border-right: 1px solid #C5C5C5;
 }
 
-.join-btn {
+/*.join-btn {
     position: absolute;
     left: 84.8%;
     right: 2.36%;
     top: 43.75%;
     bottom: 36.61%;
-}
+}*/
 
 /* private session */
 
@@ -129,11 +129,8 @@ body {
     z-index: 10;
 }
 
-.askPermission {
+#askPermissionBtn {
     position: absolute;
-    left: 64.31%;
-    right: 15%;
-    top: 40.18%;
-    bottom: 56.77%;    
+    margin: 8%;   
     z-index: 11;
 }
