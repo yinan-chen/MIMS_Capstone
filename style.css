@@ -1,7 +1,7 @@
 /*body*/
 
 body {
-    background-color: #ABEAD1;
+    background-color: #C2F0DE;
     font-size: 16px;
     font-family: 'Nunito Sans', sans-serif;
     line-height: 24px;
@@ -84,7 +84,7 @@ body {
 
 .publicIndicator {
     position: absolute;
-    background-color: #EBB8AC;
+    background-color: #41CCA3;
     border-radius: 0.75rem 0 0 0.75rem ;
     left: 0%;
     right: 96%;
@@ -109,7 +109,7 @@ body {
 
 .privateIndicator {
     position: absolute;
-    background-color: #41CCA3;
+    background-color: #EBB8AC;
     border-radius: 0.75rem 0 0 0.75rem ;
     left: 0%;
     right: 96%;
