@@ -166,12 +166,32 @@
                                 <br>
                                 <div class="row">
                                     <div class="col-4">
+                                        <label for="sessionPrivate" class="col-form-label">Private</label>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="privateSwitch">
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-4">
                                         <label for="sessionStartTime" class="col-form-label">Session Start Time</label>
                                     </div>
                                     <div class="col-auto">
                                         <p id="sessionStartTime">Now</p>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="sessionEndTime" class="col-form-label">Session End Time</label>
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="text" id="sessionTopic" class="form-control" aria-describedby="passwordHelpInline">
+                                    </div>
+                                </div>
+                                <br>
                                 <br>
                                 <div class="row">
                                     <div class="col-4">
@@ -180,11 +200,6 @@
                                     <div class="col-8">
                                         <textarea class="form-control" id="sessionDescription" rows="3"></textarea>
                                     </div>
-                                </div>
-                                <br>
-                                <div class="form-check form-switch">
-                                    <label class="form-check-label" for="privateSwitch">Private</label>
-                                    <input class="form-check-input" type="checkbox" id="privateSwitch">
                                 </div>
                             </form>
                         </div>
