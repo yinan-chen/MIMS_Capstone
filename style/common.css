@@ -33,7 +33,7 @@ body {
 #addNewSessionIcon {
     vertical-align: -.125em; 
     padding-right: 5px; 
-    font-size: 1.5rem;"
+    font-size: 1.5rem;
 }
 
 /* cards */
@@ -134,4 +134,8 @@ body {
     position: absolute;
     margin: 8%;   
     z-index: 11;
+}
+
+.col-form-label {
+    padding: 0%;
 }
