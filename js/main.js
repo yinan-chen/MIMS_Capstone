@@ -57,3 +57,9 @@ function createNewSessionHTML(topic, description, privateSwitch) {
 
     return session_str;
 }
+
+var askForPermissionBtn = document.querySelector("#askPermissionBtn")
+askForPermissionBtn.addEventListener("click", function() {
+    askForPermissionBtn.innerHTML = "Pending Approval";
+    askForPermissionBtn.disabled = true;
+})
