@@ -139,3 +139,8 @@ body {
 .col-form-label {
     padding: 0%;
 }
+
+.form-check-input:checked {
+    background-color: #00926F;
+    border-color: #00926F;
+}
