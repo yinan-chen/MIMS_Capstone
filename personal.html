@@ -24,26 +24,106 @@
 
 <body>
 
-<div class="container-fluid p-4">
+<div class="container p-4">
     <div class="row">
         <!-- Nav: user + space -->
-        <div class="col-1 offset-1">
-            <div class="position-fixed" id="navIcons">
+        <div class="col-1">
+            <div class="position-fixed mt-4 pt-5" id="navIcons">
                 <!-- user -->
-                <div class="mt-4">
-                    <img class="img-fluid pt-5" src="./img/icon/user.png"/>
-                </div>
-                <!-- space -->
-                <div class="mt-5">
-                    <img class="img-fluid d-block pt-3" src="./img/icon/school.png"/>
-                    <img class="img-fluid d-block pt-3" src="./img/icon/class1.png"/>
-                    <img class="img-fluid d-block pt-3" src="./img/icon/class2.png"/>
-                </div>
+                <img class="img-fluid d-block" src="./img/icon/user.png"/>
+                <a href="index.html"><img class="img-fluid d-block mt-5" src="./img/icon/school_unselected.png"/></a>
             </div>
         </div>
 
         <!-- Personal Study Statistics -->
-        <div class="col-8 offset-1">
+        <div class="col-6 offset-1 mt-5 p-4" id="personalContainer">
+            <h1><strong>Avocado's room</strong></h1>
+
+            <!-- card group -->
+            <!-- review -->
+            <div class="card mt-4 p-4 pe-1 pb-0">
+                <div class="row">
+                    <div class="col-8">
+                        <h6>Today’s study time <i class="bi bi-arrow-up color-green"></i></h6>
+                        <h4 class="semi-bold color-green">00:03:12 minutes</h4>
+                        <p>Your study duration looks amazing. Keep up the good work! Don’t forget to also get some fresh air</p>
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid" src="./img/tree_small.png" align="right" width="95%"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- statistics -->
+            <div class="card mt-4 p-4">
+                <div class="row">
+                    <div class="col-2">
+                        <h4 class="semi-bold">Graph</h4>
+                    </div>
+                    <div class="col-4 offset-6">
+                        <div class="btn-group" role="group" aria-label="graphBtnGroup">
+                            <button type="button" class="btn btn-style selected">Day</button>
+                            <button type="button" class="btn btn-style">Week</button>
+                            <button type="button" class="btn btn-style">Month</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-2" id="graph">
+                    <img src="./img/graph_ex.png" />
+                </div>
+            </div>
+
+            <!-- badges -->
+            <div class="card mt-4 p-4">
+                <h4 class="semi-bold">Badges</h4>
+                <div class="row mt-2">
+                    <div class="col-2">
+                        <img class="rounded-circle" src="./img/icon/badge1.png" />
+                    </div>
+                    <div class="col-2">
+                        <img class="rounded-circle" src="./img/icon/badge2.png" />
+                    </div>
+                    <div class="col-2">
+                        <img class="rounded-circle" src="./img/icon/badge3.png" />
+                    </div>
+                    <div class="col-2">
+                        <img class="rounded-circle" src="./img/icon/badge_placeholder.png" />
+                    </div>
+                    <div class="col-2">
+                        <img class="rounded-circle" src="./img/icon/badge_placeholder.png" />
+                    </div>
+                    <div class="col-2">
+                        <img class="rounded-circle" src="./img/icon/badge_placeholder.png" />
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-2">
+                        <img class="rounded-circle" src="./img/icon/badge_placeholder.png" />
+                    </div>
+                    <div class="col-2">
+                        <img class="rounded-circle" src="./img/icon/badge_placeholder.png" />
+                    </div>
+                    <div class="col-2">
+                        <img class="rounded-circle" src="./img/icon/badge_placeholder.png" />
+                    </div>
+                    <div class="col-2">
+                        <img class="rounded-circle" src="./img/icon/badge_placeholder.png" />
+                    </div>
+                    <div class="col-2">
+                        <img class="rounded-circle" src="./img/icon/badge_placeholder.png" />
+                    </div>
+                    <div class="col-2">
+                        <img class="rounded-circle" src="./img/icon/badge_placeholder.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- side tree illustration -->
+        <div class="col-2 offset-2">
+            <div class="position-fixed ms-5" style="margin-top: 36%;">
+                <img src="./img/tree_large.png" width="80%"/>
+            </div>
         </div>
     </div>
 </div>

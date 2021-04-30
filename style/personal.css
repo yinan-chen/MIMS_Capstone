@@ -4,5 +4,46 @@ body {
     background-color: #C2F0DE;
     font-size: 16px;
     font-family: 'Nunito Sans', sans-serif;
+    color: #32325D;
     line-height: 24px;
+}
+
+.color-green {
+    color: #279675;
+}
+
+.semi-bold {
+    font-weight: 600;
+}
+
+/* nav */
+
+#navIcons img {
+    width: 70%;
+}
+
+/* Personal Study Statistics */
+
+#personalContainer {
+    background-color: #F4F5F7;
+    border-radius: 0.75rem;
+}
+
+/* cards */
+
+.card {
+    border: none;
+    border-radius: 0.75rem;
+}
+
+.btn-style {
+    color: #279675;
+    background-color: #fff;
+    border-color: #279675;
+    font-size:12px;
+}
+
+.selected {
+    color: #fff;
+    background-color: #279675;
 }
