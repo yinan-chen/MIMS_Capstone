@@ -43,7 +43,11 @@ body {
     font-size:12px;
 }
 
-.selected {
+.btn-style:hover {
+    color: #279675;
+}
+
+.btn-check:checked+.btn-style, .btn-check:checked+.btn-style {
     color: #fff;
     background-color: #279675;
 }
