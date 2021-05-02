@@ -12,6 +12,21 @@ body {
 	border-radius: 0.75rem;
 }
 
+.img_btn {
+	cursor: pointer;
+}
+
 .semi-bold {
     font-weight: 600;
+}
+
+.scrollable {
+	overflow:auto; 
+	height: 520px;
+}
+
+#screenModeBtnGroup {
+	display: inline-block; 
+	background-color: #F4F5F7; 
+	border-radius: 2rem;
 }

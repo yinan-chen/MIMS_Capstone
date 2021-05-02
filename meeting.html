@@ -24,14 +24,48 @@
 
 <body>
 
-<div class="container mt-5 p-4">
+<div class="container my-4 p-4">
     <h2><strong>PYTHON GROUP STUDY</strong></h2>
 
+    <!-- control row -->
     <div class="row mt-4">
         <!-- badge -->
-        <div class="col-1" align="center">
+        <div class="col-1 my-auto" align="center">
             <h4 class="semi-bold">Badge</h4>
-            <span data-bs-toggle="tooltip" data-bs-placement="right" title="Study Master"><img class="rounded-circle mt-3" src="./img/icon/badge1.png"/></span>
+        </div>
+
+        <!-- screen -->
+        <div class="col-8">
+            <div class="row">
+                <div class="col-8" align="right">
+                    <div class="img_btn" id="screenModeBtnGroup">
+                        <img class="rounded-circle" src="./img/icon/interactive_mode.png"/>
+                        <img class="rounded-circle ms-2" src="./img/icon/timer_mode_gray.png"/>
+                        <img class="rounded-circle ms-2" src="./img/icon/read_mode_gray.png"/>
+                        <img class="rounded-circle ms-2" src="./img/icon/screenshare_mode_gray.png"/>
+                    </div>
+                </div>
+                <div class="col-4 my-auto" align="right">
+                    <button type="button" class="btn btn-danger">Exit Session</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- video -->
+        <div class="col-3" align="center">
+            <div class="d-inline">
+                <img class="rounded-circle img_btn" src="./img/icon/mute.png"/>
+                <img class="rounded-circle img_btn ms-2" src="./img/icon/camera.png"/>
+                <img class="rounded-circle img_btn ms-2" src="./img/icon/microphone.png"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- content row -->
+    <div class="row mt-2" >
+        <!-- badge -->
+        <div class="col-1" align="center">
+            <span data-bs-toggle="tooltip" data-bs-placement="right" title="Study Master"><img class="rounded-circle" src="./img/icon/badge1.png"/></span>
             <span data-bs-toggle="tooltip" data-bs-placement="right" title="Book Reader"><img class="rounded-circle mt-3" src="./img/icon/badge2.png"/></span>
             <span data-bs-toggle="tooltip" data-bs-placement="right" title="Time Manager"><img class="rounded-circle mt-3" src="./img/icon/badge3.png"/></span>
             <span data-bs-toggle="tooltip" data-bs-placement="right" title="Tomato Slayer"><img class="rounded-circle mt-3" src="./img/icon/badge2_gray.png"/></span>
@@ -40,72 +74,15 @@
 
         <!-- screen -->
         <div class="col-8">
-            <div class="row">
-                <div class="col-8" align="right">
-                    <!--<div class="btn-group" role="group" aria-label="Basic radio toggle button group">-->
-                        <!--<input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>-->
-                        <!--<label class="btn btn-outline-primary" for="btnradio1">Radio 1</label>-->
-
-                        <!--<input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">-->
-                        <!--<label class="btn btn-outline-primary" for="btnradio2">Radio 2</label>-->
-
-                        <!--<input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">-->
-                        <!--<label class="btn btn-outline-primary" for="btnradio3">Radio 3</label>-->
-
-                        <!--<input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">-->
-                        <!--<label class="btn btn-outline-primary" for="btnradio4">Radio 4</label>-->
-                    <!--</div>-->
-                    <div style="display: inline-block; background-color: #F4F5F7; border-radius: 2rem;">
-                        <img class="rounded-circle" src="./img/icon/badge1.png"/>
-                        <img class="rounded-circle ms-3" src="./img/icon/badge1.png"/>
-                        <img class="rounded-circle ms-3" src="./img/icon/badge1.png"/>
-                        <img class="rounded-circle ms-3" src="./img/icon/badge1.png"/>
-                    </div>
-                </div>
-                <div class="col-4" align="right">
-                    <button type="button" class="btn btn-primary">Primary</button>
-                </div>
-            </div>
-            <img class="img-fluid mt-3" src="./img/interactive_screen.png" />
+            <img class="img-fluid" src="./img/interactive_screen.png" />
         </div>
 
         <!-- video -->
-        <div class="col-3" align="center">
-            <div class="d-inline">
-                <img class="rounded-circle" src="./img/icon/badge1.png"/>
-                <img class="rounded-circle ms-3" src="./img/icon/badge1.png"/>
-                <img class="rounded-circle ms-3" src="./img/icon/badge1.png"/>
-            </div>
-        </div>
-    </div>
-
-    <!-- control row -->
-    <div class="row mt-4">
-        <div class="col-1" align="center">
-            <h4 class="semi-bold">Badge</h4>
-        </div>
-        <div class="col-5" align="right">
-            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnradio1">Radio 1</label>
-
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio2">Radio 2</label>
-
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio3">Radio 3</label>
-
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio4">Radio 4</label>
-            </div>
-        </div>
-        <div class="col-3" align="right">
-            <button type="button" class="btn btn-primary">Primary</button>
-        </div>
-        <div class="col-3" align="center">
-            <img class="rounded-circle" src="./img/icon/badge_placeholder.png" />
-            <img class="rounded-circle" src="./img/icon/badge_placeholder.png" />
-            <img class="rounded-circle" src="./img/icon/badge_placeholder.png" />
+        <div class="col-3 scrollable" align="center">
+            <img class="img-fluid" src="./img/self.png" />
+            <img class="img-fluid mt-2" src="./img/person1.png" />
+            <img class="img-fluid mt-2" src="./img/person2.png" />
+            <img class="img-fluid mt-2" src="./img/person3.png" />
         </div>
     </div>
 </div>
