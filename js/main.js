@@ -1,16 +1,29 @@
 function newSessionFormSubmit() {
     let sessionTopic = $('#sessionTopic').val();
-    let sessionDescription = $('#sessionDescription').val();
     let privateSwitch = $('#privateSwitch').prop('checked');
-
-    let session = $('#sessions');
-    let sessions_str = session.html();
-    sessions_str = createNewSessionHTML(sessionTopic, sessionDescription, privateSwitch) + sessions_str;
-    session.html(sessions_str);
-
-    //clear form entries
-    $("#newSessionForm")[0].reset();
+    let sessionEndTime = $('#sessionEndTime').val();
+    let sessionDescription = $('#sessionDescription').val();
+    let url = "./meeting.html?join=1" +
+                            "&sessionTopic=" + sessionTopic + 
+                            "&privateSwitch=" + privateSwitch + 
+                            "&sessionEndTime=" + sessionEndTime +
+                            "&sessionDescription=" + sessionDescription;
+    window.location.replace(url);
 }
+
+// function newSessionFormSubmit() {
+//     let sessionTopic = $('#sessionTopic').val();
+//     let sessionDescription = $('#sessionDescription').val();
+//     let privateSwitch = $('#privateSwitch').prop('checked');
+
+//     let session = $('#sessions');
+//     let sessions_str = session.html();
+//     sessions_str = createNewSessionHTML(sessionTopic, sessionDescription, privateSwitch) + sessions_str;
+//     session.html(sessions_str);
+
+//     //clear form entries
+//     $("#newSessionForm")[0].reset();
+// }
 
 function createNewSessionHTML(topic, description, privateSwitch) {
     let session_str = "<div class='card m-2'>" +
