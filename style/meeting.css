@@ -12,6 +12,14 @@ body {
 	border-radius: 0.75rem;
 }
 
+.color-secondary {
+	color: #6E798C;
+}
+
+.color-tertiary {
+	color: #A5ADBB;
+}
+
 .img_btn {
 	cursor: pointer;
 }
@@ -40,6 +48,7 @@ body {
     color: #ffffff;
     background-color: #00926F;
     border-color: #00926F;
+    min-width: 80px;
 }
 
 #cameras .content {
@@ -54,7 +63,7 @@ body {
 	bottom: 5%;
 }
 
-#cameras .content .camera-btn-group #todolist.btn {	
+#cameras .content .camera-btn-group .indicators {	
   height: 30px;
   width: 30px;
   border-radius: 50%;
@@ -62,7 +71,7 @@ body {
   padding: 0.25rem;
 }
 
-#cameras .content .camera-btn-group #edit.btn {
+#cameras .content .camera-btn-group .edit {
   height: 25px;
   width: 25px;
   border-radius: 50%;
@@ -73,6 +82,17 @@ body {
 #self-camera img{
 	border: 3px solid #00926F;
 	border-radius: 1rem;
+}
+
+/* session goal join modal */
+.bi-plus-circle-fill {
+	font-size: 1.5rem;
+	color: #00926F;
+	cursor: pointer;
+}
+
+#warning {
+	color: #DC3545;
 }
 
 /* To Do List */
@@ -99,6 +119,10 @@ body {
 	cursor: pointer;
 }
 
+.tdl-readonly {
+	font-size: 1.2rem;
+}
+
 .offset-custom {
     margin-left: 4%;
 }
@@ -107,6 +131,15 @@ body {
 
 #progressBar p {
 	margin-bottom: 0.5rem;
+}
+
+#progressBar img{
+	width: 24px;
+}
+
+#progressBar span {
+	vertical-align:middle;
+	color: #A5ADBB;;
 }
 
 .ongoing {

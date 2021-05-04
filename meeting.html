@@ -82,27 +82,18 @@
             <div class="content" id="self-camera">
                 <img class="img-fluid" src="./img/self.png"/>
                 <div class="camera-btn-group">
-                    <button type="button" id="todolist" class="btn" data-bs-toggle="popover" data-bs-placement="left">
+                    <button type="button" class="btn indicators" id="popover-clinta" data-bs-toggle="popover" data-bs-placement="left">
                         <i class="bi bi-list-task"></i>
-                        <div id="popover-content" style="display: none;">
-                            <div class="row">
-                                <div class="col-1">
-                                    <i class="bi bi-circle-fill tdl-check" id="clinta_task1"></i>
-                                </div>
-                                <div class="col-10 offset-custom">
-                                    <p>Review Lecture 1 and learn to write data structures</p>
-                                </div>
-                            </div>
-                        </div>
                     </button>
                     <span class="ms-2">
-                        <i class="bi bi-check-circle-fill ms-1"></i>
-                        <i class="bi bi-check-circle-fill ms-1"></i>
-                        <i class="bi bi-circle-fill ms-1"></i>
-                        <i class="bi bi-circle-fill ms-1"></i>
-                        <i class="bi bi-circle-fill ms-1" onclick="test()"></i>
+                        <!--<i class="bi bi-check-circle-fill ms-1"></i>-->
+                        <i class="bi bi-circle-fill ms-1" id="i_clinta_0"></i>
+                        <i class="bi bi-circle-fill ms-1" id="i_clinta_1"></i>
+                        <i class="bi bi-circle-fill ms-1" id="i_clinta_2"></i>
+                        <i class="bi bi-circle-fill ms-1" id="i_clinta_3"></i>
+                        <i class="bi bi-circle-fill ms-1" id="i_clinta_4"></i>
                     </span>
-                    <button type="button" id="edit" class="btn ms-5"><i class="bi bi-pencil-square"></i></button>
+                    <button type="button" class="btn edit ms-5"><i class="bi bi-pencil-square"></i></button>
                 </div>
             </div>
             <img class="img-fluid mt-2" src="./img/person1.png" />
@@ -114,10 +105,9 @@
     <!-- tomato progress bar -->
     <div class="row g-1 pt-2" id="progressBar">
         <div class="col-3">
-            <!-- TODO: add the timer here and animate the progress bar-->
             <div class="mb-1">
-                <img src="./img/icon/tomato.png" width="24px">
-                <span style="vertical-align:middle">0:<span id="tomatoTimer1">25:00</span></span>
+                <img src="./img/icon/tomato.png">
+                <span id="tomatoTimer1" style="color:black">25:00</span>
             </div>
             <div class="progress">
                 <div class="progress-bar ongoing" id="progressBar1" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="25"></div>
@@ -125,8 +115,8 @@
         </div>
         <div class="col-3">
             <div class="mb-1">
-                <img src="./img/icon/tomato_gray.png" width="24px">
-                <span style="vertical-align:middle">0:25:00</span>
+                <img src="./img/icon/tomato_gray.png">
+                <span>25:00</span>
             </div>
             <div class="progress">
                 <div class="progress-bar upcoming" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="25"></div>
@@ -134,8 +124,8 @@
         </div>
         <div class="col-3">
             <div class="mb-1">
-                <img src="./img/icon/tomato_gray.png" width="24px">
-                <span style="vertical-align:middle">0:25:00</span>
+                <img src="./img/icon/tomato_gray.png">
+                <span>25:00</span>
             </div>
             <div class="progress">
                 <div class="progress-bar upcoming" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="25"></div>
@@ -143,8 +133,8 @@
         </div>
         <div class="col-3">
             <div class="mb-1">
-                <img src="./img/icon/tomato_gray.png" width="24px">
-                <span style="vertical-align:middle">0:25:00</span>
+                <img src="./img/icon/tomato_gray.png">
+                <span>25:00</span>
             </div>
             <div class="progress">
                 <div class="progress-bar upcoming" role="progressbar" style="width: 100%"></div>
@@ -154,41 +144,44 @@
 </div>
 
 <!-- Join Modal -->
-<!--<div class="modal fade" id="joinFormModal" tabindex="-1" aria-labelledby="joinFormModal" aria-hidden="true">-->
-    <!--<div class="modal-dialog">-->
-        <!--<div class="modal-content">-->
-            <!--<div class="modal-header">-->
-                <!--<h5 class="modal-title" id="createNewSessionLabel">What are you trying to achieve today?</h5>-->
-                <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
-            <!--</div>-->
-            <!--<div class="modal-body">-->
-                <!--<form id="newSessionForm">-->
-                    <!--<div class="row">-->
-                        <!--<div class="col-4">-->
-                            <!--<label for="sessionTopic" class="col-form-label">Session Goal</label>-->
-                        <!--</div>-->
-                        <!--<div class="col-auto">-->
-                            <!--<input type="text" id="sessionTopic" class="form-control" aria-describedby="passwordHelpInline">-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<br>-->
-                <!--</form>-->
-            <!--</div>-->
-            <!--<div class="modal-footer">-->
-                <!--<button type="submit" class="btn btn-primary btn-style" data-bs-dismiss="modal" onclick="newSessionFormSubmit()">Submit</button>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
+<div class="modal fade" id="joinFormModal" tabindex="-1" aria-labelledby="joinFormModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createNewSessionLabel">What are you trying to achieve today?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="newSessionForm">
+                    <div class="row mt-1">
+                        <div class="col-3">
+                            <label for="sessionGoal" class="col-form-label">Session Goal</label>
+                        </div>
+                        <div class="col-7">
+                            <input type="text" id="sessionGoal" class="form-control" aria-describedby="sessionGoalTextInput"/>
+                        </div>
+                        <div class="col-2 m-auto">
+                            <i class="bi bi-plus-circle-fill" onclick="addSessionGoalToList()"></i>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12 color-secondary">
+                            <ol id="goalsPreviewList"></ol>
+                        </div>
+                    </div>
+                    <div id="warning"></div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-style" data-bs-dismiss="modal" onclick="joinSession()">Join</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
     $(document).ready(function(){
         $('[data-bs-toggle="tooltip"]').tooltip();
-        $('[data-bs-toggle="popover"]').popover({
-            html: true,
-            title: "CLINTA'S GOALS",
-            content: $('#popover-content').html()
-        });
 
         var url = window.location.href;
         if(url.indexOf('?join=1') != -1) {
@@ -196,22 +189,12 @@
         }
     });
 
-    // $('[data-bs-toggle="popover"]').on('show.bs.popover', function(){
-    //     $('#clinta_task1').onclick = function() {alert("here");};
-    // });
-
-    $(document).on("click", "#clinta_task1", function() {
-        alert('it works!');
+    $(document).on("click", ".tdl-check", function() {
         checkTask(this);
     });
-
-    function checkTask(element) {
-        $(element).removeClass('bi-circle-fill');
-        $(element).addClass('bi-check-circle-fill');
-        console.log(element);
-    }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+<script src="./js/meeting.js"></script>
 <script src="./js/tomatoTimer.js"></script>
 </body>
 </html>
