@@ -34,29 +34,29 @@
             <h4 class="semi-bold">Badge</h4>
         </div>
 
-        <!-- screen -->
+        <!-- screen mode -->
         <div class="col-8">
             <div class="row">
                 <div class="col-8" align="right">
                     <div class="img_btn" id="screenModeBtnGroup">
-                        <img class="rounded-circle" src="./img/icon/interactive_mode.png"/>
-                        <img class="rounded-circle ms-2" src="./img/icon/timer_mode_gray.png"/>
-                        <img class="rounded-circle ms-2" src="./img/icon/read_mode_gray.png"/>
-                        <img class="rounded-circle ms-2" src="./img/icon/screenshare_mode_gray.png"/>
+                        <img class="rounded-circle" src="./img/icon/interactive_mode.png" />
+                        <img class="rounded-circle ms-2" src="./img/icon/timer_mode_gray.png" />
+                        <img class="rounded-circle ms-2" src="./img/icon/read_mode_gray.png" />
+                        <img class="rounded-circle ms-2" src="./img/icon/screenshare_mode_gray.png" />
                     </div>
                 </div>
                 <div class="col-4 my-auto" align="right">
-                    <button type="button" class="btn btn-danger">Exit Session</button>
+                    <a href="index.html"><button type="button" class="btn btn-danger">Exit Session</button></a>
                 </div>
             </div>
         </div>
 
-        <!-- video -->
+        <!-- video control -->
         <div class="col-3" align="center">
-            <div class="d-inline">
-                <img class="rounded-circle img_btn" src="./img/icon/mute.png"/>
-                <img class="rounded-circle img_btn ms-2" src="./img/icon/camera.png"/>
-                <img class="rounded-circle img_btn ms-2" src="./img/icon/microphone.png"/>
+            <div class="img_btn">
+                <img class="rounded-circle" src="./img/icon/mute.png" />
+                <img class="rounded-circle ms-2" src="./img/icon/camera.png"/>
+                <img class="rounded-circle ms-2" src="./img/icon/microphone.png"/>
             </div>
         </div>
     </div>
@@ -78,51 +78,138 @@
         </div>
 
         <!-- video -->
-        <div class="col-3 scrollable" align="center">
-            <img class="img-fluid" src="./img/self.png" />
+        <div class="col-3 scrollable" id="cameras" align="center">
+            <div class="content" id="self-camera">
+                <img class="img-fluid" src="./img/self.png"/>
+                <div class="camera-btn-group">
+                    <button type="button" id="todolist" class="btn" data-bs-toggle="popover" data-bs-placement="left">
+                        <i class="bi bi-list-task"></i>
+                        <div id="popover-content" style="display: none;">
+                            <div class="row">
+                                <div class="col-1">
+                                    <i class="bi bi-circle-fill tdl-check" id="clinta_task1"></i>
+                                </div>
+                                <div class="col-10 offset-custom">
+                                    <p>Review Lecture 1 and learn to write data structures</p>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                    <span class="ms-2">
+                        <i class="bi bi-check-circle-fill ms-1"></i>
+                        <i class="bi bi-check-circle-fill ms-1"></i>
+                        <i class="bi bi-circle-fill ms-1"></i>
+                        <i class="bi bi-circle-fill ms-1"></i>
+                        <i class="bi bi-circle-fill ms-1" onclick="test()"></i>
+                    </span>
+                    <button type="button" id="edit" class="btn ms-5"><i class="bi bi-pencil-square"></i></button>
+                </div>
+            </div>
             <img class="img-fluid mt-2" src="./img/person1.png" />
             <img class="img-fluid mt-2" src="./img/person2.png" />
             <img class="img-fluid mt-2" src="./img/person3.png" />
         </div>
     </div>
-</div>
 
-<!-- Join Modal -->
-<div class="modal fade" id="joinFormModal" tabindex="-1" aria-labelledby="joinFormModal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="createNewSessionLabel">What are you trying to achieve today?</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- tomato progress bar -->
+    <div class="row g-1 pt-2" id="progressBar">
+        <div class="col-3">
+            <!-- TODO: add the timer here and animate the progress bar-->
+            <div class="mb-1">
+                <img src="./img/icon/tomato.png" width="24px">
+                <span style="vertical-align:middle">0:14:59</span>
             </div>
-            <div class="modal-body">
-                <form id="newSessionForm">
-                    <div class="row">
-                        <div class="col-4">
-                            <label for="sessionTopic" class="col-form-label">Session Goal</label>
-                        </div>
-                        <div class="col-auto">
-                            <input type="text" id="sessionTopic" class="form-control" aria-describedby="passwordHelpInline">
-                        </div>
-                    </div>
-                    <br>
-                </form>
+            <div class="progress">
+                <div class="progress-bar ongoing" role="progressbar" style="width: 60%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="25"></div>
             </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary btn-style" data-bs-dismiss="modal" onclick="newSessionFormSubmit()">Submit</button>
+        </div>
+        <div class="col-3">
+            <div class="mb-1">
+                <img src="./img/icon/tomato_gray.png" width="24px">
+                <span style="vertical-align:middle">0:25:00</span>
+            </div>
+            <div class="progress">
+                <div class="progress-bar upcoming" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="25"></div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-1">
+                <img src="./img/icon/tomato_gray.png" width="24px">
+                <span style="vertical-align:middle">0:25:00</span>
+            </div>
+            <div class="progress">
+                <div class="progress-bar upcoming" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="25"></div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-1">
+                <img src="./img/icon/tomato_gray.png" width="24px">
+                <span style="vertical-align:middle">0:25:00</span>
+            </div>
+            <div class="progress">
+                <div class="progress-bar upcoming" role="progressbar" style="width: 100%"></div>
             </div>
         </div>
     </div>
 </div>
 
+<!-- Join Modal -->
+<!--<div class="modal fade" id="joinFormModal" tabindex="-1" aria-labelledby="joinFormModal" aria-hidden="true">-->
+    <!--<div class="modal-dialog">-->
+        <!--<div class="modal-content">-->
+            <!--<div class="modal-header">-->
+                <!--<h5 class="modal-title" id="createNewSessionLabel">What are you trying to achieve today?</h5>-->
+                <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+            <!--</div>-->
+            <!--<div class="modal-body">-->
+                <!--<form id="newSessionForm">-->
+                    <!--<div class="row">-->
+                        <!--<div class="col-4">-->
+                            <!--<label for="sessionTopic" class="col-form-label">Session Goal</label>-->
+                        <!--</div>-->
+                        <!--<div class="col-auto">-->
+                            <!--<input type="text" id="sessionTopic" class="form-control" aria-describedby="passwordHelpInline">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<br>-->
+                <!--</form>-->
+            <!--</div>-->
+            <!--<div class="modal-footer">-->
+                <!--<button type="submit" class="btn btn-primary btn-style" data-bs-dismiss="modal" onclick="newSessionFormSubmit()">Submit</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
 <script>
     $(document).ready(function(){
         $('[data-bs-toggle="tooltip"]').tooltip();
+        $('[data-bs-toggle="popover"]').popover({
+            html: true,
+            title: "CLINTA'S GOALS",
+            content: $('#popover-content').html()
+        });
+
         var url = window.location.href;
         if(url.indexOf('?join=1') != -1) {
             $('#joinFormModal').modal('show');
         }
     });
+
+    // $('[data-bs-toggle="popover"]').on('show.bs.popover', function(){
+    //     $('#clinta_task1').onclick = function() {alert("here");};
+    // });
+
+    $(document).on("click", "#clinta_task1", function() {
+        alert('it works!');
+        checkTask(this);
+    });
+
+    function checkTask(element) {
+        $(element).removeClass('bi-circle-fill');
+        $(element).addClass('bi-check-circle-fill');
+        console.log(element);
+    }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </body>

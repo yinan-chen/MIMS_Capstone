@@ -1,7 +1,7 @@
 /*body*/
 
 body {
-    background-color: #C2F0DE;
+    background-color: #DCF2E5;
     font-size: 16px;
     font-family: 'Nunito Sans', sans-serif;
     line-height: 24px;
@@ -16,6 +16,10 @@ body {
 	cursor: pointer;
 }
 
+.img_btn img {
+	width: 18%;
+}
+
 .semi-bold {
     font-weight: 600;
 }
@@ -26,7 +30,7 @@ body {
 }
 
 #screenModeBtnGroup {
-	display: inline-block; 
+	display: inline-block;
 	background-color: #F4F5F7; 
 	border-radius: 2rem;
 }
@@ -36,4 +40,79 @@ body {
     color: #ffffff;
     background-color: #00926F;
     border-color: #00926F;
+}
+
+#cameras .content {
+	position: relative;
+	display: block;
+}
+
+#cameras .content .camera-btn-group {
+	display: inline;
+	position: absolute;
+	left:8%;
+	bottom: 5%;
+}
+
+#cameras .content .camera-btn-group #todolist.btn {	
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #00926F;
+  padding: 0.25rem;
+}
+
+#cameras .content .camera-btn-group #edit.btn {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: #00926F;
+  padding: 0 5px;
+}
+
+#self-camera img{
+	border: 3px solid #00926F;
+	border-radius: 1rem;
+}
+
+/* To Do List */
+
+.bi-list-task{
+	color: white;
+}
+
+.bi-pencil-square {
+	color: white;
+	font-size: 0.8rem;
+}
+
+.bi-check-circle-fill {
+	color: #00926F;
+}
+
+.bi-circle-fill {
+	color: #C4C4C4;
+}
+
+.tdl-check {
+	font-size: 1.2rem;
+	cursor: pointer;
+}
+
+.offset-custom {
+    margin-left: 4%;
+}
+
+/* progress bar */
+
+#progressBar p {
+	margin-bottom: 0.5rem;
+}
+
+.ongoing {
+	background-color: #41CCA3;
+}
+
+.upcoming {
+	background-color: #E9ECEF;
 }
