@@ -11,10 +11,10 @@ function startPublicTimer(duration, display) {
 
         display.textContent = minutes + ":" + seconds;
         var progressBar1 = document.querySelector("#progressBar1");
-        var width = 100 * (timer / (25*60));
+        var width = 100 * (1 - (timer / (25*60)));
         var widthStr = width.toString();
         var style = "width: " + widthStr + "%;";
-        progressBar1.setAttribute("style", style)
+        progressBar1.setAttribute("style", style);
         if (--timer < 0) {
             clearInterval(refreshIntervalId);
         }
