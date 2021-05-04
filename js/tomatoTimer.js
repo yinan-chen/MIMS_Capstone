@@ -1,4 +1,4 @@
-var countDownTimeInSec = 60 * 15;
+var countDownTimeInSec = 60 * 25;
 
 function startPublicTimer(duration, display) {
     var timer = duration, minutes, seconds;
@@ -11,7 +11,7 @@ function startPublicTimer(duration, display) {
 
         display.textContent = minutes + ":" + seconds;
         var progressBar1 = document.querySelector("#progressBar1");
-        var width = 100 * (1 - (timer / (25*60)));
+        var width = 100 * (1 - (timer / countDownTimeInSec));
         var widthStr = width.toString();
         var style = "width: " + widthStr + "%;";
         progressBar1.setAttribute("style", style);
