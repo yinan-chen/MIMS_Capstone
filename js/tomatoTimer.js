@@ -21,7 +21,7 @@ function startPublicTimer(duration, display) {
     }, 1000);
 }
 
-window.onload = function () {
-    publicDisplay = document.querySelector('#tomatoTimer1');
-    startPublicTimer(countDownTimeInSec, publicDisplay);
-};
+// window.onload = function () {
+//     publicDisplay = document.querySelector('#tomatoTimer1');
+//     startPublicTimer(countDownTimeInSec, publicDisplay);
+// };

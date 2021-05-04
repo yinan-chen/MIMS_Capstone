@@ -32,11 +32,15 @@ function updateGoalPreviewListHtmlStr(goal_str) {
 
 function joinSession() {
     // update Clinta's TDL
+    const name = "clinta";
     let popover = $('#popover-clinta');
-    let content_str = '';
+    let indicator = $('#i_clinta');
+    let content_str = '', indicator_str = '';
+
 
     goals.forEach((goal_str, index) => {
-        content_str += getTaskStr(index, 'clinta', goal_str);
+        content_str += getTaskStr(index, name, goal_str);
+        indicator_str += getIndicatorStr(index, name)
     });
 
     //update popover
@@ -45,6 +49,13 @@ function joinSession() {
         title: "CLINTA'S GOALS",
         content: content_str
     });
+
+    //update indicators shown on camera
+    indicator.html(indicator_str);
+
+    //start timer
+    let publicDisplay = document.querySelector('#tomatoTimer1');
+    startPublicTimer(countDownTimeInSec, publicDisplay);
 }
 
 function getTaskStr(index, name, goal_str) {
@@ -57,6 +68,11 @@ function getTaskStr(index, name, goal_str) {
                 '<p>' + goal_str + '</p>' +
             '</div>' +
            '</div>'
+}
+
+function getIndicatorStr(index, name) {
+    let i_id = "i_" + name + "_" + index;
+    return '<i class="bi bi-circle-fill ms-1" id="' + i_id + '"></i>'
 }
 
 
