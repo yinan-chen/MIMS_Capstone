@@ -1,3 +1,25 @@
+// Screen Control
+let curr_mode = "interactive_mode";
+let screenImg = $('#screenImg');
+
+function updateScreen(element) {
+    const screen_path = "./img/";
+    const icon_path = "./img/icon/";
+    let curr_mode_id = "#" + curr_mode;
+    let new_mode = element.id;
+
+
+    //update control button
+    $(curr_mode_id).attr('src', icon_path + curr_mode + "_gray.png");
+    element.src = icon_path + new_mode + ".png";
+
+    //update screen
+    screenImg.attr('src', screen_path + new_mode + ".png");
+
+    curr_mode = new_mode;
+}
+
+
 // To do List
 const MAX_GOALS = 5;
 let goals = [], goals_completion = [];
