@@ -16,7 +16,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
-
     <!-- Others -->
     <link rel="stylesheet" href="style/common.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -194,7 +193,7 @@
                                         <label for="sessionEndTime" class="col-form-label">Session End Time</label>
                                     </div>
                                     <div class="col-auto">
-                                        <input type="text" id="sessionEndTime" class="form-control" aria-describedby="passwordHelpInline">
+                                        <input type="text" id="sessionEndTime" class="form-control bs-timepicker" aria-describedby="passwordHelpInline">
                                     </div>
                                 </div>
                                 <br>
@@ -230,5 +229,14 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 <script src="./js/main.js"></script>
 <script src="./js/timer.js"></script>
+<!-- Time Picker -->
+<script src="./js/jquery.slim.min.js"></script>
+<link rel="stylesheet" href="./style/timepicker.min.css">
+<script src="./js/timepicker.min.js"></script>
+<script>
+    $(document).ready(function(){
+       $('.bs-timepicker').timepicker();
+    })
+</script>
 </body>
 </html>
