@@ -1,0 +1,76 @@
+/*body*/
+
+body {
+    background-color: #DCF2E5;
+    font-size: 16px;
+    font-family: 'Nunito Sans', sans-serif;
+    color: #32325D;
+    line-height: 24px;
+}
+
+.color-green {
+    color: #279675;
+}
+
+.color-secondary {
+	color: #6E798C;
+}
+
+.color-tertiary {
+	color: #A5ADBB;
+}
+
+.semi-bold {
+    font-weight: 600;
+}
+
+/* Personal Study Statistics */
+
+#contentContainer {
+    background-color: rgba(244, 245, 247, 0.4);
+    border-radius: 0.75rem;
+}
+
+/* cards */
+
+.card {
+    border: none;
+    border-radius: 0.75rem;
+}
+
+.btn-style, .btn-style:hover {
+    color: #279675;
+    background-color: #fff;
+    border-color: #279675;
+    border-radius: 1.5rem;
+    font-size:16px;
+    width: 100%;
+    min-height: 40px;
+}
+
+
+.highlight, .highlight:hover {
+	color: white;
+	background-color: #279675;
+}
+
+.disabled, .disabled:hover {
+	color: #A5ADBB;
+	border-color: #A5ADBB;
+}
+
+
+/* Tree Illustrations */
+
+#treeIllustration {
+	width: 90%;
+	margin-top: 30%;
+}
+
+#personalRoomPic {
+    position: fixed;
+    top: 200px;
+    left: 800px;
+    z-index: -1;
+    width: 40%;
+}

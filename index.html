@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>MIMS Capstone</title>
+    <title>MIMS Capstone Project</title>
     <link rel="icon">
 
     <!-- Bootstrap CSS -->
@@ -16,227 +16,83 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+
     <!-- Others -->
-    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/index.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-
 <div class="container p-4">
     <div class="row">
-        <!-- Nav: user + joined spaces -->
-        <div class="col-1">
-            <div class="position-fixed" id="navIcons">
-                <!-- user -->
-                <div class="mt-4">
-                    <a href="personal.html"><img class="img-fluid pt-5" src="./img/icon/user.png"/></a>
-                </div>
-                <!-- spaces -->
-                <div class="mt-5">
-                    <img class="img-fluid d-block pt-3" src="./img/icon/school.png"/>
-                    <img class="img-fluid d-block pt-3" src="./img/icon/class1.png"/>
-                    <img class="img-fluid d-block pt-3" src="./img/icon/class2.png"/>
-                </div>
-            </div>
-        </div>
+        <div class="col-7 p-4" id="contentContainer">
+            <h4 class="color-secondary">2021 MIMS Capstone Project</h4>
+            <h1><strong>Virtual Study Room</strong></h1>
 
-        <!-- Sessions -->
-        <div class="col-8 offset-session">
-            <!-- building roof -->
-            <img class="img-fluid" src="./img/roof.png" />
-
-            <!-- add new session -->
-            <div class="card mx-2 my-3 p-3">
-                <div class="d-grid col-3 mx-auto">
-                    <button class="btn btn-style" type="button" data-bs-toggle="modal" data-bs-target="#createNewSessionFormModal">
-                        <i class="bi bi-plus-circle-fill" id="addNewSessionIcon"></i> New Session
-                    </button>
-                </div>
-            </div>
-
-            <!-- available sessions -->
-            <div id="sessions">
-                <!-- public session example -->
-                <div class="card mx-2 my-3">
-                    <div class="row g-2">
-                        <div class="col-7 cardSeparator">
-                            <div class="publicIndicator"></div>
-                            <div class="card-body ps-5">
-                                <h6 class="card-tertiary">Session Info</h6>
-                                <h5>Python Group Study</h5>
-                                <div class="card-secondary">
-                                    <p class="mt-3 mb-1">Description</p>
-                                    <ol>
-                                        <li>Review Lecture 1 and learn to write data structures</li>
-                                        <li>Start HW 1</li>
-                                        <li>Working on the group project</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-5">
-                            <div class="card-body">
-                                <div class="row g-0">
-                                    <div class="col-7">
-                                        <h6 class="card-tertiary">Members</h6>
-                                        <div class="mt-4">
-                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                            <br>
-                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/moreProfilePicture.png">
-                                        </div>
-                                    </div>
-                                    <div class="col-5">
-                                        <h6 class="card-tertiary"><i class="bi bi-clock card-secondary"></i> Ends in: <span id="time">--:--</span></h6>
-                                        <div class="d-grid mx-3 mt-5">
-                                            <a class="btn btn-style" href="./meeting.html?join=1">
-                                                Join
-                                                <!-- <button class="btn btn-style" type="button" data-bs-toggle="modal" data-bs-target="#joinFormModal">Join</button> -->
-                                            </a>
-                                            <!-- <button class="btn btn-style" type="button" data-bs-toggle="modal" data-bs-target="#joinFormModal">Join</button> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="card mt-4 p-4 pe-1 pb-0">
+                <h4 class="semi-bold">Overview</h4>
+                <div class="row mt-2">
+                    <div class="col-8">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
                     </div>
-                </div>
-                <!-- private session example -->
-                <div class="card mx-2 my-3">
-                    <div class="row g-2">
-                        <div class="col-7">
-                            <div class="privateIndicator"></div>
-                            <div class="card-body ps-5">
-                                <h6 class="card-tertiary">Private Session Info</h6>
-                                <h5 class="card-title">INFO205 Group Study</h5>
-                                <div class="card-secondary">
-                                    <p class="mt-3 mb-1">Description</p>
-                                    <ol>
-                                        <li>Watch the lecture 11's recording</li>
-                                        <li>Finish the weekly reading reflection</li>
-                                        <li>Write analysis paper of analyzing information privacy and data protection</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-5">
-                            <div class="card-body">
-                                <div class="opaqueLayer"></div>
-                                <button class="btn btn-style" id="askPermissionBtn" type="button">Ask for permission to join</button>
-                                <div class="row g-0">
-                                    <div class="col-7">
-                                        <h6 class="card-tertiary">Members</h6>
-                                        <div class="mt-4">
-                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                            <br>
-                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/profilePicture.png">
-                                            <img class="rounded-circle sessionMembersPicture" src="./img/icon/moreProfilePicture.png">
-                                        </div>
-                                    </div>
-                                    <div class="col-5">
-                                        <h6 class="card-tertiary"><i class="bi bi-clock card-secondary"></i> Ends in: <span id="privateTime">--:--</span></h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-4">
+                        <img class="img-fluid" id="treeIllustration" src="./img/tree_small.png" align="right"/>
                     </div>
                 </div>
             </div>
 
-            <!-- Form Modal -->
-            <div class="modal fade" id="createNewSessionFormModal" tabindex="-1" aria-labelledby="createNewSessionFormModal" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="createNewSessionLabel"><strong>Create a New Session</strong></h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form id="newSessionForm">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <label for="sessionTopic" class="col-form-label">Session Topic</label>
-                                    </div>
-                                    <div class="col-auto">
-                                        <input type="text" id="sessionTopic" class="form-control" aria-describedby="passwordHelpInline">
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-4">
-                                        <label for="privateSwitch" class="col-form-label" >Private</label>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="privateSwitch" checked>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-4">
-                                        <label for="sessionStartTime" class="col-form-label">Session Start Time</label>
-                                    </div>
-                                    <div class="col-auto">
-                                        <p id="sessionStartTime">Now</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-4">
-                                        <label for="sessionEndTime" class="col-form-label">Session End Time</label>
-                                    </div>
-                                    <div class="col-auto">
-                                        <input type="text" id="sessionEndTime" class="form-control bs-timepicker" aria-describedby="passwordHelpInline">
-                                    </div>
-                                </div>
-                                <br>
-                                <br>
-                                <div class="row">
-                                    <div class="col-4">
-                                        <label for="sessionDescription" class="col-form-label">Description</label>
-                                    </div>
-                                    <div class="col-8">
-                                        <textarea class="form-control" id="sessionDescription" rows="3"></textarea>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <!--<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-                            <button type="submit" class="btn btn-style modal-btn mx-auto" data-bs-dismiss="modal" onclick="newSessionFormSubmit()">Start !</button>
-                        </div>
+            <div class="card mt-4 p-4">
+                <h4 class="semi-bold">Deliverable</h4>
+                <div class="row mt-2">
+                    <div class="col-4">
+                        <a href="common.html"><button class="btn btn-style highlight" type="button">Prototype</button></a>
+                    </div>
+                    <div class="col-4">
+                        <a href="#"><button class="btn btn-style" type="button">Paper</button></a>
+                    </div>
+                    <div class="col-4">
+                        <a href="#"><button class="btn btn-style disabled" type="button" disabled>Presentation</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Members -->
+            <div class="card mt-4 p-4">
+                <h4 class="semi-bold">Members</h4>
+                <div class="row mt-2">
+                    <div class="col-3">
+                        <img class="rounded-circle" src="./img/icon/badge_socialanimal.png" />
+                    </div>
+                    <div class="col-3">
+                        <img class="rounded-circle" src="./img/icon/badge_timemanager.png" />
+                    </div>
+                    <div class="col-3">
+                        <img class="rounded-circle" src="./img/icon/badge_grandmaster.png" />
+                    </div>
+                    <div class="col-3">
+                        <img class="rounded-circle" src="./img/icon/badge_rewardkiller.png" />
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- house bottom -->
-    <div class="row">
-        <div class="col-11 offset-building">
-            <img class="img-fluid ps-5" src="./img/building.png" width="90%"/>
-        </div>
+
+        <!-- side tree illustration -->
+        <!-- <div class="col-2 offset-2">
+            <div class="position-fixed ms-5" style="margin-top: 36%;">
+                <img src="./img/tree_large.png" width="80%"/>
+            </div>
+        </div> -->
+        <img src="./img/personalRoom.png" id="personalRoomPic">
     </div>
 </div>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-<script src="./js/main.js"></script>
-<script src="./js/timer.js"></script>
-<!-- Time Picker -->
-<script src="./js/jquery.slim.min.js"></script>
-<link rel="stylesheet" href="./style/timepicker.min.css">
-<script src="./js/timepicker.min.js"></script>
 <script>
-    $(document).ready(function(){
-       $('.bs-timepicker').timepicker();
-    })
+
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </body>
 </html>
