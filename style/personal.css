@@ -51,3 +51,13 @@ body {
     color: #fff;
     background-color: #279675;
 }
+
+
+/* Personal Room and tree Background */
+#personalRoomPic {
+    position: fixed;
+    top: 200px;
+    left: 800px;
+    z-index: -1;
+    width: 40%;
+}
