@@ -8,6 +8,10 @@ body {
     line-height: 24px;
 }
 
+.offset-custom {
+    margin-left: 2%;
+}
+
 .color-green {
     color: #279675;
 }
