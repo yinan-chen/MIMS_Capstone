@@ -79,19 +79,58 @@
 
         <!-- video -->
         <div class="col-3 scrollable" id="cameras" align="center">
+            <!-- interactive -->
             <div class="content" id="self-camera">
-                <img class="img-fluid" src="./img/self.png"/>
+                <img class="img-fluid" src="./img/sri.png"/>
                 <div class="camera-btn-group">
-                    <button type="button" class="btn indicators" id="popover-clinta" data-bs-toggle="popover" data-bs-placement="left">
+                    <button type="button" class="btn indicators" id="popover-sri" data-bs-toggle="popover" data-bs-placement="left">
                         <i class="bi bi-list-task"></i>
                     </button>
-                    <span class="ms-2" id="i_clinta"></span>
+                    <span class="ms-2" id="i_sri"></span>
                 </div>
                 <button type="button" class="btn edit" id="edit_btn"><i class="bi bi-pencil-square"></i></button>
             </div>
-            <img class="img-fluid mt-2" src="./img/person1.png" />
-            <img class="img-fluid mt-2" src="./img/person2.png" />
-            <img class="img-fluid mt-2" src="./img/person3.png" />
+            <!-- prototype -->
+            <div class="content">
+                <img class="img-fluid mt-2" src="./img/cinta.png" />
+                <div class="camera-btn-group">
+                    <button type="button" class="btn indicators" id="popover-cinta" data-bs-toggle="popover" data-bs-placement="left">
+                        <i class="bi bi-list-task"></i>
+                    </button>
+                    <span class="ms-2">
+                        <i class="bi bi-check-circle-fill ms-1"></i>
+                        <i class="bi bi-check-circle-fill ms-1"></i>
+                        <i class="bi bi-circle-fill ms-1"></i>
+                        <i class="bi bi-circle-fill ms-1"></i>
+                        <i class="bi bi-circle-fill ms-1"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="content">
+                <img class="img-fluid mt-2" src="./img/susanto.png" />
+                <div class="camera-btn-group">
+                    <button type="button" class="btn indicators" id="popover-susanto" data-bs-toggle="popover" data-bs-placement="left">
+                        <i class="bi bi-list-task"></i>
+                    </button>
+                    <span class="ms-2">
+                        <i class="bi bi-check-circle-fill ms-1"></i>
+                        <i class="bi bi-circle-fill ms-1"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="content">
+                <img class="img-fluid mt-2" src="./img/sinta.png" />
+                <div class="camera-btn-group">
+                    <button type="button" class="btn indicators" id="popover-sinta" data-bs-toggle="popover" data-bs-placement="left">
+                        <i class="bi bi-list-task"></i>
+                    </button>
+                    <span class="ms-2">
+                        <i class="bi bi-circle-fill ms-1"></i>
+                        <i class="bi bi-circle-fill ms-1"></i>
+                        <i class="bi bi-circle-fill ms-1"></i>
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -175,6 +214,8 @@
 <script>
     $(document).ready(function(){
         $('[data-bs-toggle="tooltip"]').tooltip();
+
+        initializePrototypePopover();
 
         var url = window.location.href;
         if(url.indexOf('?join=1') != -1) {
