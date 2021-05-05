@@ -1,7 +1,7 @@
 /*body*/
 
 body {
-    background-color: #C2F0DE;
+    background-color: #DCF2E5;
     font-size: 16px;
     font-family: 'Nunito Sans', sans-serif;
     color: #32325D;
@@ -25,7 +25,7 @@ body {
 /* Personal Study Statistics */
 
 #personalContainer {
-    background-color: #F4F5F7;
+    background-color: rgba(244, 245, 247, 0.4);
     border-radius: 0.75rem;
 }
 
