@@ -51,6 +51,10 @@ body {
     min-width: 80px;
 }
 
+.btn-style:hover {
+	color: white;
+}
+
 #cameras .content {
 	position: relative;
 	display: block;

@@ -22,7 +22,7 @@ function updateScreen(element) {
 
 // To do List
 const MAX_GOALS = 5;
-let goals = [], goals_completion = [];
+let goals = [];
 let warning = $('#warning');
 let goalsPreviewList = $('#goalsPreviewList');
 
@@ -39,7 +39,10 @@ function addSessionGoalToList() {
             $('#sessionGoal').val('');
             updateGoalPreviewListHtmlStr(goal_str);
             goals.push(goal_str);
-            goals_completion.push(false);
+
+            // enable the join button
+            if(goals.length === 1)
+                $('#joinBtn').prop("disabled", false);
         }
     }
 
