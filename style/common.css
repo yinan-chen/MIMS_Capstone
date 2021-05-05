@@ -1,7 +1,7 @@
 /*body*/
 
 body {
-    background-color: #C2F0DE;
+    background-color: #DCF2E5;
     font-size: 16px;
     font-family: 'Nunito Sans', sans-serif;
     line-height: 24px;
@@ -12,6 +12,7 @@ body {
     color: #ffffff;
     background-color: #00926F;
     border-color: #00926F;
+    min-width: 80px;
 }
 
 .btn-style:hover {
@@ -122,4 +123,31 @@ body {
     background-color: #C5C5C5;
     opacity: 100%;
     border-color: #C5C5C5;
+}
+
+/* modal */
+.modal-content{
+    background-color: #F4F5F7;
+}
+
+.modal-header {
+    border-bottom: none;
+    padding: 1.25rem;
+}
+
+.modal-body {
+    padding: 1.25rem;
+}
+
+.modal-footer {
+    border-top: none;
+    padding: 1rem;
+}
+
+.form-control{
+    border: none;
+}
+
+.modal-btn {
+    min-width: 160px;
 }

@@ -160,3 +160,31 @@ body {
 .upcoming {
 	background-color: #E9ECEF;
 }
+
+/* modal */
+
+.modal-content{
+	background-color: #F4F5F7;
+}
+
+.modal-header {
+	border-bottom: none;
+	padding: 1.25rem;
+}
+
+.modal-body {
+	padding: 1.25rem;
+}
+
+.modal-footer {
+	border-top: none;
+	padding: 1rem;
+}
+
+.form-control{
+	border: none;
+}
+
+.modal-btn {
+	min-width: 160px;
+}
