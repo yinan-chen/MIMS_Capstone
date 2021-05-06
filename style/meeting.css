@@ -34,7 +34,7 @@ body {
 
 .scrollable {
 	overflow:auto; 
-	height: 520px;
+	height: 375px;
 }
 
 #screenModeBtnGroup {
@@ -125,6 +125,10 @@ body {
 	color: #C4C4C4;
 }
 
+.popover {
+	min-width: 200px !important;
+}
+
 .tdl-check {
 	font-size: 1.2rem;
 	cursor: pointer;
@@ -187,4 +191,18 @@ body {
 
 .modal-btn {
 	min-width: 160px;
+}
+
+/* responsive setting */
+
+@media (min-width: 1200px) {
+	.scrollable { 
+		height: 450px;
+	}
+}
+
+@media (min-width: 1400px) {
+	.scrollable { 
+		height: 450px;
+	}
 }
