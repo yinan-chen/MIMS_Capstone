@@ -209,7 +209,14 @@ body {
 }
 
 .modal-btn {
+	color: #ffffff;
+	background-color: #00926F;
+	border-color: #00926F;
 	min-width: 160px;
+}
+
+.modal-btn:hover {
+	color: white;
 }
 
 /* responsive setting */
