@@ -89,7 +89,7 @@ body {
     position: absolute;
     background-color: rgba(50, 50, 93, 0.5);
     border-radius: 0 0.75rem 0.75rem 0;
-    left: 58%;
+    left: 50%;
     right: 0%;
     top: 0%;
     bottom: 0%;
@@ -142,4 +142,12 @@ body {
 
 .modal-btn {
     min-width: 160px;
+}
+
+/* responsive setting */
+
+@media (min-width: 1200px) {
+    .opaqueLayer {
+        left: 58%;
+    }
 }
