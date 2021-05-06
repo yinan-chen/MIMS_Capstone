@@ -63,18 +63,6 @@ body {
     position: fixed;
     z-index: -1;
     right: 10px;
-    bottom: 80px;
+    top: 120px;
     width: 50%;
-}
-
-@media (min-width: 1200px) {
-    #personalRoomPic {
-        /*bottom: 20px;*/
-    }
-}
-
-@media (min-width: 1400px) {
-    #personalRoomPic {
-        bottom: 40px;
-    }
 }
