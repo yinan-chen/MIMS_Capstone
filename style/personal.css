@@ -9,7 +9,7 @@ body {
 }
 
 .offset-custom {
-    margin-left: 2%;
+    margin-left: 3%;
 }
 
 .color-green {
@@ -58,10 +58,23 @@ body {
 
 
 /* Personal Room and tree Background */
+
 #personalRoomPic {
     position: fixed;
-    top: 200px;
-    left: 800px;
     z-index: -1;
-    width: 40%;
+    right: 10px;
+    bottom: 80px;
+    width: 50%;
+}
+
+@media (min-width: 1200px) {
+    #personalRoomPic {
+        /*bottom: 20px;*/
+    }
+}
+
+@media (min-width: 1400px) {
+    #personalRoomPic {
+        bottom: 40px;
+    }
 }
