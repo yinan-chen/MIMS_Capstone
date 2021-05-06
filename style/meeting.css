@@ -37,23 +37,41 @@ body {
 	height: 375px;
 }
 
+/* screen mode control group*/
+
+/*#screenModeBtnGroup {*/
+	/*display: inline-block;*/
+	/*background-color: #F4F5F7; */
+	/*border-radius: 2rem;*/
+/*}*/
+
 #screenModeBtnGroup {
-	display: inline-block;
-	background-color: #F4F5F7; 
-	border-radius: 2rem;
+	border-radius: 2.5rem;
+	background-color: #F4F5F7;
 }
 
-/* buttons */
 .btn-style {
-    color: #ffffff;
-    background-color: #00926F;
-    border-color: #00926F;
-    min-width: 80px;
+    color: #00926F;
+    background-color: #F4F5F7;
+    border-color: #F4F5F7;
+    /*min-width: 80px;*/
+
+	width: 50px;
+	height: 50px;
+	padding-top: 5%;
+	border-radius: 50% !important;
 }
 
-.btn-style:hover {
+.btn-style:hover, .checked {
 	color: white;
+	background-color: #00926F;
 }
+
+#screenModeBtnGroup i {
+	font-size: 1.2rem;
+}
+
+/* camera region */
 
 #cameras .content {
 	position: relative;
@@ -96,6 +114,7 @@ body {
 }
 
 /* session goal join modal */
+
 .bi-plus-circle-fill {
 	font-size: 1.5rem;
 	color: #00926F;
@@ -199,10 +218,28 @@ body {
 	.scrollable { 
 		height: 450px;
 	}
+
+	.btn-style {
+		width: 55px;
+		height: 55px;
+	}
+
+	#screenModeBtnGroup i {
+		font-size: 1.3rem;
+	}
 }
 
 @media (min-width: 1400px) {
 	.scrollable { 
 		height: 450px;
+	}
+
+	.btn-style {
+		width: 60px;
+		height: 60px;
+	}
+
+	#screenModeBtnGroup i {
+		font-size: 1.4rem;
 	}
 }
