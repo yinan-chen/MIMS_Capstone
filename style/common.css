@@ -27,14 +27,6 @@ body {
 
 /* sessions */
 
-.offset-session {
-    margin-left: 12%;
-}
-
-.offset-building {
-    margin-left: 4%;
-}
-
 #addNewSessionIcon {
     vertical-align: -.125em; 
     padding-right: 5px; 
