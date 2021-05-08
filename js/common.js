@@ -1,12 +1,12 @@
 function newSessionFormSubmit() {
     let sessionTopic = $('#sessionTopic').val();
     let privateSwitch = $('#privateSwitch').prop('checked');
-    let sessionEndTime = $('#sessionEndTime').val();
+    let numOfPomodoroSessions = $('#numOfPomodoroSessions').val();
     let sessionDescription = $('#sessionDescription').val();
     let url = "./meeting.html?join=0" +
                             "&sessionTopic=" + sessionTopic + 
                             "&privateSwitch=" + privateSwitch + 
-                            "&sessionEndTime=" + sessionEndTime +
+                            "&numOfPomodoroSessions=" + numOfPomodoroSessions +
                             "&sessionDescription=" + sessionDescription;
     window.location.replace(url);
 }
