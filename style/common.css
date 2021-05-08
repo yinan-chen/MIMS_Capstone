@@ -144,6 +144,12 @@ body {
     min-width: 160px;
 }
 
+/* pomodora session drop down */
+select#numOfPomodoroSessions {
+    border:0px;
+    outline:0px;
+ }
+
 /* responsive setting */
 
 @media (min-width: 1200px) {
