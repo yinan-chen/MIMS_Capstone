@@ -235,8 +235,11 @@
 
         initializePrototypePopover();
 
-        var url = window.location.href;
-        if(url.indexOf('?join=1') != -1) {
+        // check query parameter 'join' 
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const fromJoinBtn = urlParams.get('join')
+        if (fromJoinBtn === "1" || fromJoinBtn === "0") {
             $('#joinFormModal').modal('show');
         }
     });

@@ -3,7 +3,7 @@ function newSessionFormSubmit() {
     let privateSwitch = $('#privateSwitch').prop('checked');
     let sessionEndTime = $('#sessionEndTime').val();
     let sessionDescription = $('#sessionDescription').val();
-    let url = "./meeting.html?join=1" +
+    let url = "./meeting.html?join=0" +
                             "&sessionTopic=" + sessionTopic + 
                             "&privateSwitch=" + privateSwitch + 
                             "&sessionEndTime=" + sessionEndTime +
