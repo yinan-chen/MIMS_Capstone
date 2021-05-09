@@ -23,6 +23,7 @@ function updateScreen(element) {
 // To do List
 const MAX_GOALS = 5;
 let goals = [];
+let goals_completion = [];
 let warning = $('#warning');
 let goalsPreviewList = $('#goalsPreviewList');
 
@@ -39,6 +40,7 @@ function addSessionGoalToList() {
             $('#sessionGoal').val('');
             updateGoalPreviewListHtmlStr(goal_str);
             goals.push(goal_str);
+            goals_completion.push(false);
 
             // enable the join button
             if(goals.length === 1)
@@ -102,19 +104,27 @@ function getIndicatorStr(index, name) {
 
 
 function checkTask(element) {
+    let index = parseInt(element.id.split("_")[1]);
+
+    // flip the task status
+    goals_completion[index] = !goals_completion[index];
+
     // update TDL icon
-    updateIcon($(element));
+    updateIcon($(element), goals_completion[index]);
 
     // update associated indicator icon
-    let task_index = element.id.split("_")[1];
-    console.log(task_index);
-    let indicator_id = "#i_sri_" + task_index;
-    updateIcon($(indicator_id));
+    let indicator_id = "#i_sri_" + index;
+    updateIcon($(indicator_id), goals_completion[index]);
 }
 
-function updateIcon(element) {
-    element.removeClass('bi-circle-fill');
-    element.addClass('bi-check-circle-fill');
+function updateIcon(element, isComplete) {
+    if(isComplete) {
+        element.removeClass('bi-circle-fill');
+        element.addClass('bi-check-circle-fill');
+    } else {
+        element.removeClass('bi-check-circle-fill');
+        element.addClass('bi-circle-fill');
+    }
 }
 
 
