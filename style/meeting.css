@@ -215,6 +215,20 @@ body {
 	color: white;
 }
 
+/* screen */
+#screen {
+	position: relative;
+}
+
+/* large Timer for timer mode */
+#largeTimer {
+	position: absolute;
+	text-align: center;
+	font-size: 10vw;
+	top: 30%;
+	left: 25%;
+}
+
 /* responsive setting */
 
 @media (min-width: 1200px) {
