@@ -36,17 +36,10 @@
 
         <div class="col-3 offset-2" align="right">
             <div class="btn-group" role="group" aria-label="screen mode control group" id="screenModeBtnGroup">
-                <input type="radio" class="btn-check" name="screenModeBtnGroup" id="interactive_mode" autocomplete="off" checked>
-                <label class="btn btn-style screenMode checked" for="interactive_mode"><i class="bi bi-people"></i></label>
-
-                <input type="radio" class="btn-check" name="screenModeBtnGroup" id="timer_mode" autocomplete="off">
-                <label class="btn btn-style screenMode" for="timer_mode"><i class="bi bi-clock"></i></label>
-
-                <input type="radio" class="btn-check" name="screenModeBtnGroup" id="read_mode" autocomplete="off">
-                <label class="btn btn-style screenMode" for="read_mode"><i class="bi bi-book"></i></label>
-
-                <input type="radio" class="btn-check" name="screenModeBtnGroup" id="pressure_mode" autocomplete="off">
-                <label class="btn btn-style screenMode" for="pressure_mode"><i class="bi bi-tv"></i></label>
+                <button type="button" class="btn btn-style checked" id="interactive_mode"><i class="bi bi-people"></i></button>
+                <button type="button" class="btn btn-style" id="focus_mode"><i class="bi bi-clock"></i></button>
+                <button type="button" class="btn btn-style" id="read_mode"><i class="bi bi-book"></i></button>
+                <button type="button" class="btn btn-style" id="pressure_mode"><i class="bi bi-tv"></i></button>
             </div>
         </div>
         <div class="col-3 my-auto" align="right">
@@ -219,14 +212,10 @@
         // check query parameter 'join' 
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
-        const fromJoinBtn = urlParams.get('join')
+        const fromJoinBtn = urlParams.get('join');
         if (fromJoinBtn === "1" || fromJoinBtn === "0") {
             $('#joinFormModal').modal('show');
         }
-    });
-
-    $(document).on("click", ".tdl-check", function() {
-        checkTask(this);
     });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>

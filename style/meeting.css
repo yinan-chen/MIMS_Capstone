@@ -37,12 +37,12 @@ body {
 	height: 375px;
 }
 
-/* control group */
-
-#screenModeBtnGroup {
-	border-radius: 2.5rem;
+.btn:disabled {
+	color: #C4C4C4;
 	background-color: #F4F5F7;
 }
+
+/* control group */
 
 .btn-style {
     color: #00926F;
@@ -59,8 +59,9 @@ body {
 	background-color: #00926F;
 }
 
-.screenMode {
-	padding-top: 5%;
+#screenModeBtnGroup {
+	border-radius: 2.5rem;
+	background-color: #F4F5F7;
 }
 
 #screenModeBtnGroup i, #videoControlBtnGroup i{
@@ -213,6 +214,10 @@ body {
 
 .modal-btn:hover {
 	color: white;
+}
+
+.modal-btn:disabled {
+	border-color: #C4C4C4;
 }
 
 /* responsive setting */

@@ -1,24 +1,84 @@
-// Screen Control
-let curr_mode = "interactive_mode";
+// click events
+
+$(document).on("click", ".tdl-check", function() {
+    checkTask(this);
+});
+
+$('#screenModeBtnGroup button').on("click", function() {
+    let id = this.id;
+    $(this).addClass('checked').siblings().removeClass('checked');
+    console.log(id);
+    updateContent(id);
+});
+
+$('#videoControlBtnGroup button').on("click", function() {
+    let id = this.id;
+    let btn = $(this);
+    let btn_icon = btn.children('i');
+
+    if(id === 'camera') updateCamera(btn, btn_icon);
+    if(id === 'mic') updateMic(btn, btn_icon);
+});
+
+
+// Screen Control Update
 let screenImg = $('#screenImg');
+let camera = $('#camera');
+let mic = $('#mic');
 
-function updateScreen(element) {
-    const screen_path = "./img/";
-    const icon_path = "./img/icon/";
-    let curr_mode_id = "#" + curr_mode;
-    let new_mode = element.id;
-
-
-    //update control button
-    $(curr_mode_id).attr('src', icon_path + curr_mode + "_gray.png");
-    element.src = icon_path + new_mode + ".png";
-
+function updateContent(mode) {
     //update screen
-    screenImg.attr('src', screen_path + new_mode + ".png");
+    const screen_path = "./img/";
+    screenImg.attr('src', screen_path + mode + ".png");
 
-    curr_mode = new_mode;
+    //update others
+    camera.prop('disabled', false);
+    mic.prop('disabled', false);
+
+    if(mode !== 'interactive_mode') {
+        mic.prop('disabled', true);
+
+        //TODO: show yellow alert
+    }
+
+    if(mode === 'pressure_mode'){
+        camera.prop('disabled', true);
+
+        //TODO: update video pic to screens
+    }
 }
 
+// Video Control Update
+
+let isCameraOn = true, isMicOn = true;
+
+function updateCamera(btn, icon) {
+    isCameraOn = !isCameraOn;
+
+    if(isCameraOn) {
+        btn.removeClass('checked');
+        icon.removeClass('bi-camera-video-off');
+        icon.addClass('bi-camera-video');
+    } else {
+        btn.addClass('checked');
+        icon.removeClass('bi-camera-video');
+        icon.addClass('bi-camera-video-off');
+    }
+}
+
+function updateMic(btn, icon) {
+    isMicOn = !isMicOn;
+
+    if(isMicOn) {
+        btn.removeClass('checked');
+        icon.removeClass('bi-mic-mute');
+        icon.addClass('bi-mic');
+    } else {
+        btn.addClass('checked');
+        icon.removeClass('bi-mic');
+        icon.addClass('bi-mic-mute');
+    }
+}
 
 // To do List
 const MAX_GOALS = 5;
@@ -110,20 +170,20 @@ function checkTask(element) {
     goals_completion[index] = !goals_completion[index];
 
     // update TDL icon
-    updateIcon($(element), goals_completion[index]);
+    updateTDLIcon($(element), goals_completion[index]);
 
     // update associated indicator icon
     let indicator_id = "#i_sri_" + index;
-    updateIcon($(indicator_id), goals_completion[index]);
+    updateTDLIcon($(indicator_id), goals_completion[index]);
 }
 
-function updateIcon(element, isComplete) {
+function updateTDLIcon(icon, isComplete) {
     if(isComplete) {
-        element.removeClass('bi-circle-fill');
-        element.addClass('bi-check-circle-fill');
+        icon.removeClass('bi-circle-fill');
+        icon.addClass('bi-check-circle-fill');
     } else {
-        element.removeClass('bi-check-circle-fill');
-        element.addClass('bi-circle-fill');
+        icon.removeClass('bi-check-circle-fill');
+        icon.addClass('bi-circle-fill');
     }
 }
 
