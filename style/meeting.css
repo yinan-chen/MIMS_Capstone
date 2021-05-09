@@ -37,13 +37,7 @@ body {
 	height: 375px;
 }
 
-/* screen mode control group*/
-
-/*#screenModeBtnGroup {*/
-	/*display: inline-block;*/
-	/*background-color: #F4F5F7; */
-	/*border-radius: 2rem;*/
-/*}*/
+/* control group */
 
 #screenModeBtnGroup {
 	border-radius: 2.5rem;
@@ -54,11 +48,9 @@ body {
     color: #00926F;
     background-color: #F4F5F7;
     border-color: #F4F5F7;
-    /*min-width: 80px;*/
 
 	width: 50px;
 	height: 50px;
-	padding-top: 5%;
 	border-radius: 50% !important;
 }
 
@@ -67,7 +59,11 @@ body {
 	background-color: #00926F;
 }
 
-#screenModeBtnGroup i {
+.screenMode {
+	padding-top: 5%;
+}
+
+#screenModeBtnGroup i, #videoControlBtnGroup i{
 	font-size: 1.2rem;
 }
 
@@ -231,7 +227,7 @@ body {
 		height: 55px;
 	}
 
-	#screenModeBtnGroup i {
+	#screenModeBtnGroup i, #videoControlBtnGroup i{
 		font-size: 1.3rem;
 	}
 }
@@ -246,7 +242,7 @@ body {
 		height: 60px;
 	}
 
-	#screenModeBtnGroup i {
+	#screenModeBtnGroup i, #videoControlBtnGroup i{
 		font-size: 1.4rem;
 	}
 }

@@ -34,35 +34,19 @@
             <h4 class="semi-bold">Badge</h4>
         </div>
 
-        <!-- screen mode -->
-        <!--<div class="col-8">-->
-            <!--<div class="row">-->
-                <!--<div class="col-8" align="right">-->
-                    <!--<div class="img_btn" id="screenModeBtnGroup">-->
-                        <!--<img class="rounded-circle" src="./img/icon/interactive_mode.png" id="interactive_mode" onclick="updateScreen(this)"/>-->
-                        <!--<img class="rounded-circle ms-2" src="./img/icon/timer_mode_gray.png" id="timer_mode"/>-->
-                        <!--<img class="rounded-circle ms-2" src="./img/icon/read_mode_gray.png" id="read_mode" onclick="updateScreen(this)"/>-->
-                        <!--<img class="rounded-circle ms-2" src="./img/icon/screenshare_mode_gray.png" id="screenshare_mode" onclick="updateScreen(this)"/>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="col-4 my-auto" align="right">-->
-                    <!--<a href="common.html"><button type="button" class="btn btn-danger">Exit Session</button></a>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
         <div class="col-3 offset-2" align="right">
             <div class="btn-group" role="group" aria-label="screen mode control group" id="screenModeBtnGroup">
                 <input type="radio" class="btn-check" name="screenModeBtnGroup" id="interactive_mode" autocomplete="off" checked>
-                <label class="btn btn-style checked" for="interactive_mode"><i class="bi bi-people"></i></label>
+                <label class="btn btn-style screenMode checked" for="interactive_mode"><i class="bi bi-people"></i></label>
 
                 <input type="radio" class="btn-check" name="screenModeBtnGroup" id="timer_mode" autocomplete="off">
-                <label class="btn btn-style" for="timer_mode"><i class="bi bi-clock"></i></label>
+                <label class="btn btn-style screenMode" for="timer_mode"><i class="bi bi-clock"></i></label>
 
                 <input type="radio" class="btn-check" name="screenModeBtnGroup" id="read_mode" autocomplete="off">
-                <label class="btn btn-style" for="read_mode"><i class="bi bi-book"></i></label>
+                <label class="btn btn-style screenMode" for="read_mode"><i class="bi bi-book"></i></label>
 
                 <input type="radio" class="btn-check" name="screenModeBtnGroup" id="pressure_mode" autocomplete="off">
-                <label class="btn btn-style" for="pressure_mode"><i class="bi bi-tv"></i></label>
+                <label class="btn btn-style screenMode" for="pressure_mode"><i class="bi bi-tv"></i></label>
             </div>
         </div>
         <div class="col-3 my-auto" align="right">
@@ -70,12 +54,9 @@
         </div>
 
         <!-- video control -->
-        <div class="col-3" align="center">
-            <div class="img_btn">
-                <img class="rounded-circle img-fluid" src="./img/icon/mute.png" />
-                <img class="rounded-circle img-fluid ms-2" src="./img/icon/camera.png"/>
-                <img class="rounded-circle img-fluid ms-2" src="./img/icon/microphone.png"/>
-            </div>
+        <div class="col-3" align="center" id="videoControlBtnGroup">
+            <button type="button" class="btn btn-style" id="camera"><i class="bi bi-camera-video"></i></button>
+            <button type="button" class="btn btn-style ms-2" id="mic"><i class="bi bi-mic"></i></button>
         </div>
     </div>
 
