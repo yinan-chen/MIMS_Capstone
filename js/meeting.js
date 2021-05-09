@@ -142,7 +142,8 @@ function joinSession() {
 
     //start timer
     let publicDisplay = document.querySelector('#tomatoTimer1');
-    startPublicTimer(countDownTimeInSec, publicDisplay);
+    let largeTimer = document.querySelector('#largeTimer');
+    startPublicTimer(countDownTimeInSec, publicDisplay, largeTimer);
 }
 
 function getTaskStr(index, name, goal_str) {
@@ -230,3 +231,12 @@ function getReadOnlyStr(goal_str, ifComplete) {
         '</div>'
 }
 
+
+
+var timerModeBtn = document.querySelector("#timer_mode")
+timerModeBtn.addEventListener("click", () => {
+    let screenImage = document.querySelector("#screenImg")
+    let largeTimer = document.querySelector("#largeTimer")
+    screenImage.setAttribute("style", "display: none;") 
+    largeTimer.setAttribute("style", "display: block;")
+})
