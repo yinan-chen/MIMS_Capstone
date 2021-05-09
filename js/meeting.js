@@ -22,14 +22,26 @@ $('#videoControlBtnGroup button').on("click", function() {
 
 
 // Screen Control Update
+const screen_path = "./img/";
 let screenImg = $('#screenImg');
+let largeTimer = $('#largeTimer');
 let camera = $('#camera');
 let mic = $('#mic');
 
 function updateContent(mode) {
     //update screen
-    const screen_path = "./img/";
-    screenImg.attr('src', screen_path + mode + ".png");
+    if(mode === 'focus_mode') {
+        screenImg.addClass('hidden') ;
+        largeTimer.removeClass('hidden');
+
+        //TODO: enable timer
+
+    }else{
+        screenImg.removeClass('hidden') ;
+        largeTimer.addClass('hidden');
+
+        screenImg.attr('src', screen_path + mode + ".png");
+    }
 
     //update others
     camera.prop('disabled', false);
@@ -188,7 +200,6 @@ function updateTDLIcon(icon, isComplete) {
     }
 }
 
-
 //////////////////// Prototype Input ///////////////////////////////////////////////////////////////////////////////////
 function initializePrototypePopover() {
     const cinta = ["Review Lecture 1 and learn to write data structures", "Prepare for InfoViz presentation", "INFO206 group project", "Work on design prototype", "Doing usability testing"];
@@ -230,13 +241,3 @@ function getReadOnlyStr(goal_str, ifComplete) {
         '</div>' +
         '</div>'
 }
-
-
-
-var timerModeBtn = document.querySelector("#timer_mode")
-timerModeBtn.addEventListener("click", () => {
-    let screenImage = document.querySelector("#screenImg")
-    let largeTimer = document.querySelector("#largeTimer")
-    screenImage.setAttribute("style", "display: none;") 
-    largeTimer.setAttribute("style", "display: block;")
-})

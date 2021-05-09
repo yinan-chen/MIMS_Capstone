@@ -42,6 +42,10 @@ body {
 	background-color: #F4F5F7;
 }
 
+.hidden {
+	display: none;
+}
+
 /* control group */
 
 .btn-style {
