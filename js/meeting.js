@@ -7,7 +7,6 @@ $(document).on("click", ".tdl-check", function() {
 $('#screenModeBtnGroup button').on("click", function() {
     let id = this.id;
     $(this).addClass('checked').siblings().removeClass('checked');
-    console.log(id);
     updateContent(id);
 });
 
@@ -22,20 +21,19 @@ $('#videoControlBtnGroup button').on("click", function() {
 
 
 // Screen Control Update
+const people = ['sri', 'cinta', 'susanto', 'sinta'];
 const screen_path = "./img/";
 let screenImg = $('#screenImg');
 let largeTimer = $('#largeTimer');
 let camera = $('#camera');
 let mic = $('#mic');
+let isVideoScreen = false; //check if videos currently show are screens or not
 
 function updateContent(mode) {
     //update screen
     if(mode === 'focus_mode') {
         screenImg.addClass('hidden') ;
         largeTimer.removeClass('hidden');
-
-        //TODO: enable timer
-
     }else{
         screenImg.removeClass('hidden') ;
         largeTimer.addClass('hidden');
@@ -56,8 +54,20 @@ function updateContent(mode) {
     if(mode === 'pressure_mode'){
         camera.prop('disabled', true);
 
-        //TODO: update video pic to screens
+        //update video pic to screens
+        isVideoScreen = true;
+        updateCameraImg();
+    } else if(isVideoScreen) {
+        isVideoScreen = false;
+        updateCameraImg();
     }
+}
+
+function updateCameraImg() {
+    $('#cameras img').each((index, img) => {
+        const img_path = isVideoScreen ? screen_path + 'screen.png' : screen_path + people[index] + ".png";
+        $(img).attr('src', img_path);
+    })
 }
 
 // Video Control Update
