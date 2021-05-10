@@ -155,10 +155,6 @@ function addOneMoreSessionGoalTextInputBelow(){
     } else {
         numOfGoals += 1;
         let newSessionForm = document.querySelector('#newSessionForm');
-        let formElements = newSessionForm.children;
-        let elementsArray = Array.from(formElements);
-        let indexOfWarningDiv = elementsArray.length-1
-        let newFormChildenStr = "";
         let additionalToDoInput = 
                 `<div class="row mt-2">` +
                     `<div class="col-7 offset-3">` +
@@ -189,6 +185,8 @@ function checkEmptyOrNot(element) {
     let inputValue = element.value;
     if (inputValue !== "") {
         $('#joinBtn').prop("disabled", false);
+    } else {
+        $('#joinBtn').prop("disabled", true);
     }
 }
 
@@ -230,6 +228,8 @@ function joinSession() {
 
     for (i=0; i<numOfGoals; i++) {
         let goal_str = document.querySelector('#sessionGoal' + (i+1)).value;
+        goals.push(goal_str);
+        goals_completion.push(false);
         let index = i;
         content_str += getTaskStr(index, name, goal_str);
         indicator_str += getIndicatorStr(index, name)
@@ -249,6 +249,13 @@ function joinSession() {
     let publicDisplay = document.querySelector('#tomatoTimer1');
     let largeTimer = document.querySelector('#largeTimer');
     startPublicTimer(countDownTimeInSec, publicDisplay, largeTimer);
+
+
+    // check if the button text is join. If so, change it back to Join in case user join another session
+    let joinBtnText = document.querySelector("#joinBtn").innerHTML;
+    if (joinBtnText == "Save Changes") {
+        document.querySelector("#joinBtn").innerHTML = "Join";
+    }
 }
 
 function getTaskStr(index, name, goal_str) {
@@ -291,6 +298,12 @@ function updateTDLIcon(icon, isComplete) {
         icon.removeClass('bi-check-circle-fill');
         icon.addClass('bi-circle-fill');
     }
+}
+
+function modifySessionGoals() {
+    document.querySelector("#joinBtn").innerHTML = "Save Changes";
+
+    $('#joinFormModal').modal('show');
 }
 
 //////////////////// Prototype Input ///////////////////////////////////////////////////////////////////////////////////
