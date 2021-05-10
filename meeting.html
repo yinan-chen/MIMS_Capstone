@@ -66,6 +66,10 @@
 
         <!-- screen -->
         <div class="col-8" id="screen">
+            <div class="alert alert-warning alert-dismissible fade" role="alert" id="quiteModeWarning">
+                You are in quiet mode now, microphones are disabled.
+                <button type="button" class="btn-close" aria-label="Close" onclick="dismissQuiteModeWarning()"></button>
+            </div>
             <span class="hidden" id="largeTimer">--:--</span>
             <img class="img-fluid " id="screenImg" src="./img/interactive_mode.png" />
         </div>

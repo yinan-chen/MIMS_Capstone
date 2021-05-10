@@ -23,10 +23,11 @@ $('#videoControlBtnGroup button').on("click", function() {
 // Screen Control Update
 const people = ['sri', 'cinta', 'susanto', 'sinta'];
 const screen_path = "./img/";
-let screenImg = $('#screenImg');
-let largeTimer = $('#largeTimer');
-let camera = $('#camera');
-let mic = $('#mic');
+const screenImg = $('#screenImg');
+const largeTimer = $('#largeTimer');
+const camera = $('#camera');
+const mic = $('#mic');
+const quiteModeWarning = $('#quiteModeWarning');
 let isVideoScreen = false; //check if videos currently show are screens or not
 
 function updateContent(mode) {
@@ -48,7 +49,10 @@ function updateContent(mode) {
     if(mode !== 'interactive_mode') {
         mic.prop('disabled', true);
 
-        //TODO: show yellow alert
+        //enable quite mode warning
+        quiteModeWarning.addClass('show');
+    }else {
+        dismissQuiteModeWarning();
     }
 
     if(mode === 'pressure_mode'){
@@ -61,6 +65,10 @@ function updateContent(mode) {
         isVideoScreen = false;
         updateCameraImg();
     }
+}
+
+function dismissQuiteModeWarning() {
+    quiteModeWarning.removeClass('show');
 }
 
 function updateCameraImg() {
