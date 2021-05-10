@@ -192,6 +192,35 @@ function checkEmptyOrNot(element) {
     }
 }
 
+// function joinSession() {
+//     // update Sri's TDL
+//     const name = "sri";
+//     let popover = $('#popover-sri');
+//     let indicator = $('#i_sri');
+//     let content_str = '', indicator_str = '';
+
+
+//     goals.forEach((goal_str, index) => {
+//         content_str += getTaskStr(index, name, goal_str);
+//         indicator_str += getIndicatorStr(index, name)
+//     });
+
+//     //update popover
+//     popover.popover({
+//         html: true,
+//         title: "SRI'S GOALS",
+//         content: content_str
+//     });
+
+//     //update indicators shown on camera
+//     indicator.html(indicator_str);
+
+//     //start timer
+//     let publicDisplay = document.querySelector('#tomatoTimer1');
+//     let largeTimer = document.querySelector('#largeTimer');
+//     startPublicTimer(countDownTimeInSec, publicDisplay, largeTimer);
+// }
+
 function joinSession() {
     // update Sri's TDL
     const name = "sri";
@@ -199,11 +228,12 @@ function joinSession() {
     let indicator = $('#i_sri');
     let content_str = '', indicator_str = '';
 
-
-    goals.forEach((goal_str, index) => {
+    for (i=0; i<numOfGoals; i++) {
+        let goal_str = document.querySelector('#sessionGoal' + (i+1)).value;
+        let index = i;
         content_str += getTaskStr(index, name, goal_str);
         indicator_str += getIndicatorStr(index, name)
-    });
+    };
 
     //update popover
     popover.popover({
