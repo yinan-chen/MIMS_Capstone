@@ -84,44 +84,46 @@
                 <button type="button" class="btn edit" id="edit_btn"><i class="bi bi-pencil-square"></i></button>
             </div>
             <!-- prototype -->
-            <div class="content">
-                <img class="img-fluid mt-2" src="./img/cinta.png" />
-                <div class="camera-btn-group">
-                    <button type="button" class="btn indicators" id="popover-cinta" data-bs-toggle="popover" data-bs-placement="left">
-                        <i class="bi bi-list-task"></i>
-                    </button>
-                    <span class="ms-2">
+            <div class="hidden" id="prototype">
+                <div class="content">
+                    <img class="img-fluid mt-2" src="./img/cinta.png" />
+                    <div class="camera-btn-group">
+                        <button type="button" class="btn indicators" id="popover-cinta" data-bs-toggle="popover" data-bs-placement="left">
+                            <i class="bi bi-list-task"></i>
+                        </button>
+                        <span class="ms-2">
                         <i class="bi bi-check-circle-fill ms-1"></i>
                         <i class="bi bi-check-circle-fill ms-1"></i>
                         <i class="bi bi-circle-fill ms-1"></i>
                         <i class="bi bi-circle-fill ms-1"></i>
                         <i class="bi bi-circle-fill ms-1"></i>
                     </span>
+                    </div>
                 </div>
-            </div>
-            <div class="content">
-                <img class="img-fluid mt-2" src="./img/susanto.png" />
-                <div class="camera-btn-group">
-                    <button type="button" class="btn indicators" id="popover-susanto" data-bs-toggle="popover" data-bs-placement="left">
-                        <i class="bi bi-list-task"></i>
-                    </button>
-                    <span class="ms-2">
+                <div class="content">
+                    <img class="img-fluid mt-2" src="./img/susanto.png" />
+                    <div class="camera-btn-group">
+                        <button type="button" class="btn indicators" id="popover-susanto" data-bs-toggle="popover" data-bs-placement="left">
+                            <i class="bi bi-list-task"></i>
+                        </button>
+                        <span class="ms-2">
                         <i class="bi bi-check-circle-fill ms-1"></i>
                         <i class="bi bi-circle-fill ms-1"></i>
                     </span>
+                    </div>
                 </div>
-            </div>
-            <div class="content">
-                <img class="img-fluid mt-2" src="./img/sinta.png" />
-                <div class="camera-btn-group">
-                    <button type="button" class="btn indicators" id="popover-sinta" data-bs-toggle="popover" data-bs-placement="left">
-                        <i class="bi bi-list-task"></i>
-                    </button>
-                    <span class="ms-2">
+                <div class="content">
+                    <img class="img-fluid mt-2" src="./img/sinta.png" />
+                    <div class="camera-btn-group">
+                        <button type="button" class="btn indicators" id="popover-sinta" data-bs-toggle="popover" data-bs-placement="left">
+                            <i class="bi bi-list-task"></i>
+                        </button>
+                        <span class="ms-2">
                         <i class="bi bi-circle-fill ms-1"></i>
                         <i class="bi bi-circle-fill ms-1"></i>
                         <i class="bi bi-circle-fill ms-1"></i>
                     </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -208,14 +210,26 @@
     $(document).ready(function(){
         $('[data-bs-toggle="tooltip"]').tooltip();
 
-        initializePrototypePopover();
-
         // check query parameter 'join' 
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const fromJoinBtn = urlParams.get('join');
-        if (fromJoinBtn === "1" || fromJoinBtn === "0") {
+        const prototype = $('#prototype');
+
+        if(fromJoinBtn === "0") {
+            // join as host
             $('#joinFormModal').modal('show');
+
+            prototype.attr('class', 'hidden');
+        }else if(fromJoinBtn === "1") {
+            // join as joiner
+            $('#joinFormModal').modal('show');
+
+            //only joiner join would see prototype participants
+            prototype.removeClass('hidden');
+            initializePrototypePopover();
+        }else {
+            console.log("invalid html parameter input");
         }
     });
 </script>
