@@ -65,17 +65,14 @@
                         <h4 class="semi-bold">Graph</h4>
                     </div>
                     <div class="col-lg-9 col-xl-10" align="right">
-                        <div class="btn-group" role="group" aria-label="study time graph selection group">
-                            <input type="radio" class="btn-check" name="btnGroupGraph" id="btnWeek" autocomplete="off" checked>
-                            <label class="btn btn-style" for="btnWeek">Week</label>
-
-                            <input type="radio" class="btn-check" name="btnGroupGraph" id="btnMonth" autocomplete="off">
-                            <label class="btn btn-style" for="btnMonth">Month</label>
+                        <div class="btn-group" role="group" aria-label="study time graph selection group" id="graphBtnControl">
+                            <button type="button" class="btn btn-style checked" id="week">Week</button>
+                            <button type="button" class="btn btn-style" id="month">Month</button>
                         </div>
                     </div>
                 </div>
-                <div class="mt-2" id="graph">
-                    <img class="img-fluid" src="./img/graph.png" />
+                <div class="mt-2">
+                    <img class="img-fluid" id="graph" src="./img/week_stat.png"/>
                 </div>
             </div>
 
@@ -129,6 +126,14 @@
 <script>
     $(document).ready(function(){
         $('[data-bs-toggle="tooltip"]').tooltip();
+    });
+
+
+    $('#graphBtnControl button').on("click", function() {
+        const id = this.id;
+        const img_path = './img/' + id + '_stat.png';
+        $(this).addClass('checked').siblings().removeClass('checked');
+        $('#graph').attr('src', img_path);
     });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>

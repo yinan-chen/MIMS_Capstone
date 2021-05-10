@@ -47,8 +47,9 @@ body {
     font-size:12px;
 }
 
-.btn-style:hover {
-    color: #279675;
+.btn-style:hover, .checked {
+	color: white;
+	background-color: #00926F;
 }
 
 .btn-check:checked+.btn-style, .btn-check:checked+.btn-style {
