@@ -189,15 +189,10 @@
                             <label for="sessionGoal" class="col-form-label">Session Goal</label>
                         </div>
                         <div class="col-7">
-                            <input type="text" id="sessionGoal" class="form-control" aria-describedby="sessionGoalTextInput"/>
+                            <input type="text" id="sessionGoal1" class="form-control" aria-describedby="sessionGoalTextInput" onkeyup="checkEmptyOrNot(this)" />
                         </div>
                         <div class="col-2 m-auto">
-                            <i class="bi bi-plus-circle-fill" onclick="addSessionGoalToList()"></i>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-12 color-secondary">
-                            <ol id="goalsPreviewList"></ol>
+                            <i class="bi bi-plus-circle-fill" onclick="addOneMoreSessionGoalTextInputBelow()"></i>
                         </div>
                     </div>
                     <div id="warning"></div>
