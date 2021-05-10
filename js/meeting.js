@@ -225,11 +225,17 @@ function joinSession() {
     let popover = $('#popover-sri');
     let indicator = $('#i_sri');
     let content_str = '', indicator_str = '';
+    let isEditMode = document.querySelector('#joinBtn').innerHTML === "Save Changes";
 
     for (i=0; i<numOfGoals; i++) {
         let goal_str = document.querySelector('#sessionGoal' + (i+1)).value;
-        goals.push(goal_str);
-        goals_completion.push(false);
+        if (!isEditMode) {
+            goals.push(goal_str);
+            goals_completion.push(false);
+        } else {
+            goals[i] = goal_str;
+        }
+        
         let index = i;
         content_str += getTaskStr(index, name, goal_str);
         indicator_str += getIndicatorStr(index, name)
@@ -249,13 +255,6 @@ function joinSession() {
     let publicDisplay = document.querySelector('#tomatoTimer1');
     let largeTimer = document.querySelector('#largeTimer');
     startPublicTimer(countDownTimeInSec, publicDisplay, largeTimer);
-
-
-    // check if the button text is join. If so, change it back to Join in case user join another session
-    let joinBtnText = document.querySelector("#joinBtn").innerHTML;
-    if (joinBtnText == "Save Changes") {
-        document.querySelector("#joinBtn").innerHTML = "Join";
-    }
 }
 
 function getTaskStr(index, name, goal_str) {
