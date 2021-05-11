@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="col-3 my-auto" align="right">
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#sessionCompleteModal">Exit Session</button>
+            <button type="button" class="btn btn-danger cursor" id="exitBtn" data-toggle="popover" data-bs-placement="top">Exit Session</button>
         </div>
 
         <!-- video control -->
@@ -206,7 +206,7 @@
 </div>
 
 <!-- Session Complete Modal -->
-<div class="modal fade" id="sessionCompleteModal" tabindex="-1" aria-labelledby="session complete modal" aria-hidden="true">
+<div class="modal fade" id="sessionSummaryModal" tabindex="-1" aria-labelledby="session complete modal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -257,12 +257,16 @@
         const urlParams = new URLSearchParams(queryString);
         const fromJoinBtn = urlParams.get('join');
         const prototype = $('#prototype');
+        const exitBtn = $('#exitBtn');
 
         if(fromJoinBtn === "0") {
             // join as host
             $('#joinFormModal').modal('show');
 
             prototype.attr('class', 'hidden');
+
+            //add exit button popover
+            initializeHostExitBtnPopover(exitBtn);
         }else if(fromJoinBtn === "1") {
             // join as joiner
             $('#joinFormModal').modal('show');
@@ -270,6 +274,10 @@
             //only joiner join would see prototype participants
             prototype.removeClass('hidden');
             initializePrototypePopover();
+
+            exitBtn.on('click', function() {
+                window.location = "common.html";
+            })
         }else {
             console.log("invalid html parameter input");
         }

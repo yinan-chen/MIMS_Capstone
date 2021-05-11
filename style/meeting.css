@@ -54,6 +54,15 @@ body {
 	text-align: center;
 }
 
+.popover {
+	min-width: 200px !important;
+	max-width: 350px !important;
+}
+
+.cursor {
+	cursor: pointer !important;
+}
+
 /* control group */
 
 .btn-style {
@@ -153,10 +162,6 @@ body {
 	color: #C4C4C4;
 }
 
-.popover {
-	min-width: 200px !important;
-}
-
 .tdl-check {
 	font-size: 1.2rem;
 	cursor: pointer;
@@ -197,22 +202,23 @@ body {
 
 .modal-content{
 	background-color: #F4F5F7;
+	border-radius: 0.5rem;
 }
 
-#joinFormModal .modal-header {
+.modal-header {
 	border-bottom: none;
 	padding: 1.25rem;
 }
 
-#sessionCompleteModal .modal-header {
-	border-bottom: none;
+#sessionSummaryModal .modal-header {
+	padding: 0.75rem 1rem;
 }
 
-#joinFormModal .modal-body {
+.modal-body {
 	padding: 1.25rem;
 }
 
-#sessionCompleteModal .modal-body {
+#sessionSummaryModal .modal-body {
 	padding: 0 1rem 1rem;
 }
 

@@ -19,6 +19,18 @@ $('#videoControlBtnGroup button').on("click", function() {
     if(id === 'mic') updateMic(btn, btn_icon);
 });
 
+// Exit session
+function initializeHostExitBtnPopover(exitBtn) {
+    const html = '<a href="common.html"><button type="button" class="btn btn-secondary">Leave Meeting</button></a>' +
+        '<button type="button" class="btn btn-danger ms-2" data-bs-toggle="modal" data-bs-target="#sessionSummaryModal">End Sessions for All</button>';
+
+    exitBtn.popover({
+        sanitize:false,
+        trigger: 'focus',
+        html: true,
+        content : html
+    })
+}
 
 // Screen Control Update
 const people = ['sri', 'cinta', 'susanto', 'sinta'];
