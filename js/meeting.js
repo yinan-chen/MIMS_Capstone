@@ -19,6 +19,12 @@ $('#videoControlBtnGroup button').on("click", function() {
     if(id === 'mic') updateMic(btn, btn_icon);
 });
 
+$('#newSessionForm input').on('input', function() {
+    let task_index = parseInt(this.id.split("_")[1]);
+    goals[task_index] = this.value;
+    console.log(goals[task_index]);
+});
+
 // Exit session
 function initializeHostExitBtnPopover(exitBtn) {
     const html = '<a href="common.html"><button type="button" class="btn btn-secondary">Leave Meeting</button></a>' +
@@ -197,6 +203,8 @@ function addOneMoreSessionGoalTextInputBelow(icon){
     // }
 
     numOfGoals += 1;
+    goals.push("");
+    goals_completion.push(false);
 
     if(numOfGoals === MAX_GOALS)
         $(icon).addClass("icon-disabled");
@@ -204,12 +212,11 @@ function addOneMoreSessionGoalTextInputBelow(icon){
     const additionalToDoInput =
         `<div class="row mt-2">` +
             `<div class="col-7 offset-3">` +
-                `<input type="text" id="sessionGoal${numOfGoals}" class="form-control" aria-describedby="sessionGoalTextInput"  onkeyup="checkEmptyOrNot(this)"/>` +
+                `<input type="text" id="sessionGoal_${numOfGoals}" class="form-control" aria-describedby="sessionGoalTextInput"  onkeyup="checkEmptyOrNot(this)"/>` +
             `</div>` +
         `</div>`;
-    const sessionFormHtml = newSessionForm.html();
 
-    newSessionForm.html(sessionFormHtml + additionalToDoInput);
+    newSessionForm.append(additionalToDoInput);
 }
 
 function checkEmptyOrNot(element) {
@@ -217,7 +224,12 @@ function checkEmptyOrNot(element) {
     if (inputValue !== "") {
         $('#joinBtn').prop("disabled", false);
     } else {
-        $('#joinBtn').prop("disabled", true);
+        let isAllInputEmpty = true;
+        goals.forEach((goal) => {
+           isAllInputEmpty = isAllInputEmpty && goal === "";
+        });
+
+        if(isAllInputEmpty) $('#joinBtn').prop("disabled", true);
     }
 }
 
