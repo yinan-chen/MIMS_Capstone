@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="col-3 my-auto" align="right">
-            <a href="common.html"><button type="button" class="btn btn-danger">Exit Session</button></a>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#sessionCompleteModal">Exit Session</button>
         </div>
 
         <!-- video control -->
@@ -179,7 +179,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="createNewSessionLabel"><strong>What are you trying to achieve today?</strong></h5>
+                <h5 class="modal-title"><strong>What are you trying to achieve today?</strong></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -200,6 +200,49 @@
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn modal-btn mx-auto" id="joinBtn" data-bs-dismiss="modal" onclick="joinSession()" disabled>Join</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Session Complete Modal -->
+<div class="modal fade" id="sessionCompleteModal" tabindex="-1" aria-labelledby="session complete modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-10 offset-1">
+                            <h2><strong>Congratulations! You have finished:</strong></h2>
+                            <h6 class="mt-4 ps-3 color-green"><strong>PYTHON GROUP STUDY</strong></h6>
+                            <div class="mt-4">
+                                <p><i class="bi bi-dot"></i> These are the badges you and your group has unlocked:</p>
+                                <div class="row center">
+                                    <div class="col-3 offset-1">
+                                        <img class="img-fluid" src="./img/icon/badge_focusmaster.png" />
+                                        <p class="pt-1">Focus Master</p>
+                                    </div>
+                                    <div class="col-3">
+                                        <img class="img-fluid" src="./img/icon/badge_grandmaster.png" />
+                                        <p class="pt-1">Grandmaster</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <p><i class="bi bi-dot"></i> Your total study time was: <span class="ps-3 color-green semi-bold">0 hr 15 min</span></p>
+                                <div class="ps-3">
+                                    <span>That’s 2 pomodoro study sessions!</span>
+                                    <img class="ps-3" src="./img/icon/tomato.png">
+                                    <img src="./img/icon/tomato.png">
+                                </div>
+                            </div>
+                            <p class="mt-4"><i class="bi bi-dot"></i> You’ve completed <span class="color-green semi-bold">25%</span> of your study goals</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

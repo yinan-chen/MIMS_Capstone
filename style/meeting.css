@@ -12,6 +12,10 @@ body {
 	border-radius: 0.75rem;
 }
 
+.color-green {
+	color: #00926F;
+}
+
 .color-secondary {
 	color: #6E798C;
 }
@@ -44,6 +48,10 @@ body {
 
 .hidden {
 	display: none;
+}
+
+.center {
+	text-align: center;
 }
 
 /* control group */
@@ -191,13 +199,21 @@ body {
 	background-color: #F4F5F7;
 }
 
-.modal-header {
+#joinFormModal .modal-header {
 	border-bottom: none;
 	padding: 1.25rem;
 }
 
-.modal-body {
+#sessionCompleteModal .modal-header {
+	border-bottom: none;
+}
+
+#joinFormModal .modal-body {
 	padding: 1.25rem;
+}
+
+#sessionCompleteModal .modal-body {
+	padding: 0 1rem 1rem;
 }
 
 .modal-footer {
