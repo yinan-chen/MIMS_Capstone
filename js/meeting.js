@@ -229,6 +229,8 @@ function joinSession() {
 
     for (i=0; i<numOfGoals; i++) {
         let goal_str = document.querySelector('#sessionGoal' + (i+1)).value;
+        // only push goals when the user first join the session or when the user 
+        // tries to edit session goals and add additional goals
         if (!isEditMode || goals.length < i+1) {
             goals.push(goal_str);
             goals_completion.push(false);
