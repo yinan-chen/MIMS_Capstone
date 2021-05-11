@@ -120,6 +120,7 @@ body {
 /* modal */
 .modal-content{
     background-color: #F4F5F7;
+    border-radius: 0.5rem; 
 }
 
 .modal-header {
