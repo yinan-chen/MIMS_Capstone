@@ -246,6 +246,12 @@ body {
 	border-color: #C4C4C4;
 }
 
+.icon-disabled {
+	color: #C4C4C4;
+	pointer-events: none;
+    opacity: .65;
+}
+
 /* screen */
 #screen {
 	position: relative;

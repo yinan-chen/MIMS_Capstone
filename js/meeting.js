@@ -124,10 +124,11 @@ function updateMic(btn, icon) {
 
 // To do List
 const MAX_GOALS = 5;
+const newSessionForm = $('#newSessionForm');
 let goals = [];
 let goals_completion = [];
-let warning = $('#warning');
-let goalsPreviewList = $('#goalsPreviewList');
+// let warning = $('#warning');
+//let goalsPreviewList = $('#goalsPreviewList');
 let numOfGoals = 1;
 
 function addSessionGoalToList() {
@@ -161,36 +162,54 @@ function updateGoalPreviewListHtmlStr(goal_str) {
 }
 
 
-function addOneMoreSessionGoalTextInputBelow(){
-    if (numOfGoals >= MAX_GOALS) {
-        warning.html("Please only enter at maximum 5 goals per session!");
-    } else {
-        numOfGoals += 1;
-        let newSessionForm = document.querySelector('#newSessionForm');
-        let additionalToDoInput = 
-                `<div class="row mt-2">` +
-                    `<div class="col-7 offset-3">` +
-                        `<input type="text" id="sessionGoal${numOfGoals}" class="form-control" aria-describedby="sessionGoalTextInput"  onkeyup="checkEmptyOrNot(this)"/>` +
-                    `</div>` +
-                    `<div class="col-2 m-auto">` +
-                        `<i class="bi bi-plus-circle-fill" onclick="addOneMoreSessionGoalTextInputBelow()"></i>` +
-                    `</div>` +
-                `</div>`;
-        
-        // temporarily remove warning div
-        let warningDiv = newSessionForm.lastElementChild;
-        newSessionForm.removeChild(warningDiv);
+function addOneMoreSessionGoalTextInputBelow(icon){
+    // if (numOfGoals >= MAX_GOALS) {
+    //     $(icon).addClass("icon-disabled");
+    // } else {
+    //     numOfGoals += 1;
+    //
+    //     if(numOfGoals === MAX_GOALS)
+    //         $(icon).addClass("icon-disabled");
+    //
+    //     const additionalToDoInput =
+    //             `<div class="row mt-2">` +
+    //                 `<div class="col-7 offset-3">` +
+    //                     `<input type="text" id="sessionGoal${numOfGoals}" class="form-control" aria-describedby="sessionGoalTextInput"  onkeyup="checkEmptyOrNot(this)"/>` +
+    //                 `</div>` +
+    //             `</div>`;
+    //     const sessionFormHtml = newSessionForm.html();
+    //
+    //     newSessionForm.html(sessionFormHtml + additionalToDoInput);
+    //
+    //
+    //     // // temporarily remove warning div
+    //     // let warningDiv = newSessionForm.lastElementChild;
+    //     // newSessionForm.removeChild(warningDiv);
+    //     //
+    //     // // append new sessionGoal text field by creating a temporary parent element, extracting the child, and appending to newSessionForm
+    //     // let wrapper = document.createElement('div');
+    //     // wrapper.innerHTML = additionalToDoInput;
+    //     // let newGoalDiv = wrapper.firstChild;
+    //     // newSessionForm.appendChild(newGoalDiv);
+    //     //
+    //     // // append the remove warning div back
+    //     // newSessionForm.appendChild(warningDiv);
+    // }
 
-        // append new sessionGoal text field by creating a temporary parent element, extracting the child, and appending to newSessionForm
-        let wrapper = document.createElement('div');
-        wrapper.innerHTML = additionalToDoInput;
-        let newGoalDiv = wrapper.firstChild;
-        newSessionForm.appendChild(newGoalDiv);
+    numOfGoals += 1;
 
-        // append the remove warning div back
-        newSessionForm.appendChild(warningDiv);
-    }
+    if(numOfGoals === MAX_GOALS)
+        $(icon).addClass("icon-disabled");
 
+    const additionalToDoInput =
+        `<div class="row mt-2">` +
+            `<div class="col-7 offset-3">` +
+                `<input type="text" id="sessionGoal${numOfGoals}" class="form-control" aria-describedby="sessionGoalTextInput"  onkeyup="checkEmptyOrNot(this)"/>` +
+            `</div>` +
+        `</div>`;
+    const sessionFormHtml = newSessionForm.html();
+
+    newSessionForm.html(sessionFormHtml + additionalToDoInput);
 }
 
 function checkEmptyOrNot(element) {
