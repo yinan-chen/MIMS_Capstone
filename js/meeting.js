@@ -158,7 +158,7 @@ function addOneMoreSessionGoalTextInputBelow(){
         let additionalToDoInput = 
                 `<div class="row mt-2">` +
                     `<div class="col-7 offset-3">` +
-                        `<input type="text" id="sessionGoal${numOfGoals}" class="form-control" aria-describedby="sessionGoalTextInput"/>` +
+                        `<input type="text" id="sessionGoal${numOfGoals}" class="form-control" aria-describedby="sessionGoalTextInput"  onkeyup="checkEmptyOrNot(this)"/>` +
                     `</div>` +
                     `<div class="col-2 m-auto">` +
                         `<i class="bi bi-plus-circle-fill" onclick="addOneMoreSessionGoalTextInputBelow()"></i>` +
