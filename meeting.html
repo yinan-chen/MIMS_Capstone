@@ -57,8 +57,8 @@
     <div class="row mt-2" >
         <!-- badge -->
         <div class="col-1" align="center">
-            <span data-bs-toggle="tooltip" data-bs-placement="right" title="Focus Master"><img class="rounded-circle" src="./img/icon/badge_focusmaster.png"/></span>
-            <span data-bs-toggle="tooltip" data-bs-placement="right" title="Grandmaster"><img class="rounded-circle mt-3" src="./img/icon/badge_grandmaster.png"/></span>
+            <span data-bs-toggle="tooltip" data-bs-placement="right" title="Focus Master"><img class="rounded-circle" id="badge1" src="./img/icon/badge_focusmaster_gray.png"/></span>
+            <span data-bs-toggle="tooltip" data-bs-placement="right" title="Grandmaster"><img class="rounded-circle mt-3" id="badge2" src="./img/icon/badge_grandmaster_gray.png"/></span>
             <span data-bs-toggle="tooltip" data-bs-placement="right" title="Reward Killer"><img class="rounded-circle mt-3" src="./img/icon/badge_rewardkiller_gray.png"/></span>
             <span data-bs-toggle="tooltip" data-bs-placement="right" title="Time Manager"><img class="rounded-circle mt-3" src="./img/icon/badge_timemanager_gray.png"/></span>
             <span data-bs-toggle="tooltip" data-bs-placement="right" title="Social Animal"><img class="rounded-circle mt-3" src="./img/icon/badge_socialanimal_gray.png"/></span>
@@ -123,7 +123,7 @@
                             <i class="bi bi-list-task"></i>
                         </button>
                         <span class="ms-2">
-                        <i class="bi bi-circle-fill ms-1"></i>
+                        <i class="bi bi-check-circle-fill ms-1"></i>
                         <i class="bi bi-circle-fill ms-1"></i>
                         <i class="bi bi-circle-fill ms-1"></i>
                     </span>
@@ -261,6 +261,7 @@
             prototype.removeClass('hidden');
             initializePrototypePopover();
 
+            // exit button
             exitBtn.on('click', function() {
                 window.location = "common.html";
             });

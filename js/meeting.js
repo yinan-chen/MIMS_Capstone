@@ -115,6 +115,8 @@ function updateMic(btn, icon) {
 // To do List
 const MAX_GOALS = 5;
 const newSessionForm = $('#newSessionForm');
+const badge1 = $('#badge1');
+const badge2 = $('#badge2');
 let goals = [""]; // initialize one for default one input
 let goals_completion = [false];
 let numOfGoals = 1;
@@ -242,6 +244,22 @@ function checkTask(element) {
     // update associated indicator icon
     let indicator_id = "#i_sri_" + index;
     updateTDLIcon($(indicator_id), goals_completion[index]);
+
+    // if complete at least one goal => activate badge
+    let atLeastOneTaskComplete = false;
+    goals_completion.forEach((isComplete) => {
+        if(isComplete) {
+            atLeastOneTaskComplete = true;
+        }
+    });
+
+    if(atLeastOneTaskComplete) {
+        badge1.attr('src', "./img/icon/badge_focusmaster.png");
+        badge2.attr('src', "./img/icon/badge_grandmaster.png");
+    } else {
+        badge1.attr('src', "./img/icon/badge_focusmaster_gray.png");
+        badge2.attr('src', "./img/icon/badge_grandmaster_gray.png");
+    }
 }
 
 function updateTDLIcon(icon, isComplete) {
