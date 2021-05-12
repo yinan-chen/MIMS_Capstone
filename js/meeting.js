@@ -123,7 +123,6 @@ let isEditTDL = false;
 function updateSessionGoalInput(element) {
     let task_index = parseInt(element.id.split("_")[1]);
     goals[task_index] = element.value;
-    console.log(goals[task_index]);
 }
 
 function checkEmptyOrNot(element) {
@@ -155,6 +154,9 @@ function addOneMoreSessionGoalTextInputBelow(element){
             `<div class="col-7 offset-3">` +
                 `<input type="text" id="${session_id}" class="form-control" aria-describedby="sessionGoalTextInput"  onkeyup="checkEmptyOrNot(this)"/>` +
             `</div>` +
+            `<div class="col-2 m-auto">` +
+                `<i class="bi bi-dash-circle-fill" onclick="removeSessionGoalTextInput(this)"></i>` +
+            `</div>` +
         `</div>`;
 
     newSessionForm.append(additionalToDoInput);
@@ -165,15 +167,21 @@ function addOneMoreSessionGoalTextInputBelow(element){
     });
 }
 
+function removeSessionGoalTextInput(element) {
+    const parent_row = $(element).parents('.row');
+    let task_index = parseInt(parent_row.find('input').attr('id').split("_")[1]);
+    goals.splice(task_index, 1);
+    goals_completion.splice(task_index, 1);
+    numOfGoals--;
+    parent_row.remove();
+}
+
 function joinSession() {
     // update Sri's TDL
     const name = "sri";
     let popover = $('#popover-sri');
     let indicator = $('#i_sri');
     let content_str = '', indicator_str = '';
-
-    console.log(goals);
-
 
     goals.forEach((goal_str, index) => {
         content_str += getTaskStr(index, name, goal_str);

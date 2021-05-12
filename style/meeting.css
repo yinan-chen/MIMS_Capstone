@@ -133,7 +133,7 @@ body {
 
 /* session goal join modal */
 
-.bi-plus-circle-fill {
+.bi-plus-circle-fill, .bi-dash-circle-fill{
 	font-size: 1.5rem;
 	color: #00926F;
 	cursor: pointer;
