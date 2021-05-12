@@ -284,6 +284,11 @@ body {
 }
 
 /* responsive setting */
+@media (min-width: 575px) {
+    .modal-md {
+        max-width: 600px;
+    }
+}
 
 @media (min-width: 1200px) {
 	.scrollable { 
