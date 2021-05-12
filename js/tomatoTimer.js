@@ -1,4 +1,4 @@
-var countDownTimeInSec = 60 * 25;
+var countDownTimeInSec = 60 * 30;
 
 function startPublicTimer(duration, display, largeTimer) {
     var timer = duration, minutes, seconds;
@@ -21,8 +21,3 @@ function startPublicTimer(duration, display, largeTimer) {
         }
     }, 1000);
 }
-
-// window.onload = function () {
-//     publicDisplay = document.querySelector('#tomatoTimer1');
-//     startPublicTimer(countDownTimeInSec, publicDisplay);
-// };

@@ -184,10 +184,12 @@ function joinSession() {
         // discard the old popover
        popover.popover('dispose');
     } else {
-        //start timer
-        let publicDisplay = document.querySelector('#tomatoTimer1');
-        let largeTimer = document.querySelector('#largeTimer');
-        startPublicTimer(countDownTimeInSec, publicDisplay, largeTimer);
+        if(!isTimerStart) {
+            //start timer
+            let publicDisplay = document.querySelector('#tomatoTimer1');
+            let largeTimer = document.querySelector('#largeTimer');
+            startPublicTimer(countDownTimeInSec, publicDisplay, largeTimer);
+        }
 
         isEditTDL = true;
     }
