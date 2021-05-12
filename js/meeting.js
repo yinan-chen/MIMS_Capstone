@@ -118,7 +118,7 @@ const newSessionForm = $('#newSessionForm');
 let goals = [""]; // initialize one for default one input
 let goals_completion = [false];
 let numOfGoals = 1;
-let isModifyMode = false;
+let isEditTDL = false;
 
 function updateSessionGoalInput(input) {
     let task_index = parseInt(input.id.split("_")[1]);
@@ -180,7 +180,7 @@ function joinSession() {
         indicator_str += getIndicatorStr(index, name)
     });
 
-    if(isModifyMode) {
+    if(isEditTDL) {
         // discard the old popover
        popover.popover('dispose');
     } else {
@@ -189,7 +189,7 @@ function joinSession() {
         let largeTimer = document.querySelector('#largeTimer');
         startPublicTimer(countDownTimeInSec, publicDisplay, largeTimer);
 
-        isModifyMode = true;
+        isEditTDL = true;
     }
 
     //initialize TDL popover
