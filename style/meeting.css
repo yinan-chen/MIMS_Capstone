@@ -126,9 +126,12 @@ body {
   padding: 0 5px;
 }
 
-#self-camera img{
+#self_img {
 	border: 3px solid #00926F;
-	border-radius: 1rem;
+}
+
+#cameras img{
+	border-radius:0.75rem;
 }
 
 /* session goal join modal */

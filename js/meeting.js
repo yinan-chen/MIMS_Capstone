@@ -23,7 +23,6 @@ $('#sessionGoal_0').on('input', function() {
 });
 
 // Screen Control Update
-const people = ['sri', 'cinta', 'susanto', 'sinta'];
 const screen_path = "./img/";
 const screenImg = $('#screenImg');
 const largeTimer = $('#largeTimer');
@@ -74,8 +73,10 @@ function dismissQuiteModeWarning() {
 }
 
 function updateCameraImg() {
+    const camera_path = screen_path + 'camera/';
+
     $('#cameras img').each((index, img) => {
-        const img_path = isVideoScreen ? screen_path + 'screen.png' : screen_path + people[index] + ".png";
+        let img_path = isVideoScreen ? camera_path + 'screen.png' : camera_path + people[index] + ".png";
         $(img).attr('src', img_path);
     })
 }
@@ -180,14 +181,13 @@ function removeSessionGoalTextInput(element) {
 
 function joinSession() {
     // update Sri's TDL
-    const name = "sri";
-    let popover = $('#popover-sri');
-    let indicator = $('#i_sri');
+    let popover = $('#popover_0');
+    let dots = $('#progressDots');
     let content_str = '', indicator_str = '';
 
     goals.forEach((goal_str, index) => {
-        content_str += getTaskStr(index, name, goal_str);
-        indicator_str += getIndicatorStr(index, name)
+        content_str += getTaskStr(index, people[0], goal_str);
+        indicator_str += getIndicatorStr(index, people[0])
     });
 
     if(isEditTDL) {
@@ -207,12 +207,12 @@ function joinSession() {
     //initialize TDL popover
     popover.popover({
         html: true,
-        title: "SRI'S GOALS",
+        title: people[0].toUpperCase() + "'S GOALS",
         content: content_str
     });
 
     //initialize indicators shown on camera
-    indicator.html(indicator_str);
+    dots.html(indicator_str);
 }
 
 function getTaskStr(index, name, goal_str) {
@@ -293,21 +293,24 @@ function initializeHostExitBtnPopover(exitBtn) {
 
 //////////////////// Prototype Input ///////////////////////////////////////////////////////////////////////////////////
 function initializePrototypePopover() {
-    const cinta = ["Review Lecture 1 and learn to write data structures", "Prepare for InfoViz presentation", "INFO206 group project", "Work on design prototype", "Doing usability testing"];
-    const cinta_completion = [true, true, false, false, false];
-    const susanto = ["Work on design prototype", "Doing usability testing"];
-    const susanto_completion = [true, false];
-    const sinta = ["Review Lecture 1 and learn to write data structures", "Prepare for InfoViz presentation", "INFO206 group project"];
-    const sinta_completion = [false, false];
+    const names = ['tracy', 'tiffany', 'yinan'];
+    const prototype1 = ["Review Lecture 1 and learn to write data structures", "Prepare for InfoViz presentation", "INFO206 group project", "Work on design prototype", "Doing usability testing"];
+    const prototype1_completion = [true, true, false, false, false];
+    const prototype2 = ["Work on design prototype", "Doing usability testing"];
+    const prototype2_completion = [true, false];
+    const prototype3 = ["Review Lecture 1 and learn to write data structures", "Prepare for InfoViz presentation", "INFO206 group project"];
+    const prototype3_completion = [true, false];
 
-    initializeEachPrototype("cinta", cinta, cinta_completion);
-    initializeEachPrototype("susanto", susanto, susanto_completion);
-    initializeEachPrototype("sinta", sinta, sinta_completion);
+    people = people.concat(names);
+
+    initializeEachPrototype(1, prototype1, prototype1_completion);
+    initializeEachPrototype(2, prototype2, prototype2_completion);
+    initializeEachPrototype(3, prototype3, prototype3_completion);
 
 }
 
-function initializeEachPrototype(name, goals, completion) {
-    let popover = $("#popover-" + name);
+function initializeEachPrototype(id, goals, completion) {
+    let popover = $("#popover_" + id);
     let content_str = '';
 
     goals.forEach((goal_str, index) => {
@@ -316,7 +319,7 @@ function initializeEachPrototype(name, goals, completion) {
 
     popover.popover({
         html: true,
-        title: name.toUpperCase() + "'S GOALS",
+        title: people[id].toUpperCase() + "'S GOALS",
         content: content_str
     });
 }

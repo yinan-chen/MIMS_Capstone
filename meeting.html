@@ -78,21 +78,21 @@
         <div class="col-3 scrollable" id="cameras" align="center">
             <!-- interactive -->
             <div class="content" id="self-camera">
-                <img class="img-fluid" src="./img/sri.png"/>
+                <img class="img-fluid" id="self_img"/>
                 <div class="camera-btn-group">
-                    <button type="button" class="btn indicators" id="popover-sri" data-bs-toggle="popover" data-bs-placement="left">
+                    <button type="button" class="btn indicators" id="popover_0" data-bs-toggle="popover" data-bs-placement="left">
                         <i class="bi bi-list-task"></i>
                     </button>
-                    <span class="ms-2" id="i_sri"></span>
+                    <span class="ms-2" id="progressDots"></span>
                 </div>
                 <button type="button" class="btn edit" id="edit_btn" onclick="modifySessionGoals()"><i class="bi bi-pencil-square"></i></button>
             </div>
             <!-- prototype -->
             <div class="hidden" id="prototype">
                 <div class="content">
-                    <img class="img-fluid mt-2" src="./img/cinta.png" />
+                    <img class="img-fluid mt-2" src="./img/camera/tracy.png"/>
                     <div class="camera-btn-group">
-                        <button type="button" class="btn indicators" id="popover-cinta" data-bs-toggle="popover" data-bs-placement="left">
+                        <button type="button" class="btn indicators" id="popover_1" data-bs-toggle="popover" data-bs-placement="left">
                             <i class="bi bi-list-task"></i>
                         </button>
                         <span class="ms-2">
@@ -105,9 +105,9 @@
                     </div>
                 </div>
                 <div class="content">
-                    <img class="img-fluid mt-2" src="./img/susanto.png" />
+                    <img class="img-fluid mt-2" src="./img/camera/tiffany.png" />
                     <div class="camera-btn-group">
-                        <button type="button" class="btn indicators" id="popover-susanto" data-bs-toggle="popover" data-bs-placement="left">
+                        <button type="button" class="btn indicators" id="popover_2" data-bs-toggle="popover" data-bs-placement="left">
                             <i class="bi bi-list-task"></i>
                         </button>
                         <span class="ms-2">
@@ -117,9 +117,9 @@
                     </div>
                 </div>
                 <div class="content">
-                    <img class="img-fluid mt-2" src="./img/sinta.png" />
+                    <img class="img-fluid mt-2" src="./img/camera/yinan.png" />
                     <div class="camera-btn-group">
-                        <button type="button" class="btn indicators" id="popover-sinta" data-bs-toggle="popover" data-bs-placement="left">
+                        <button type="button" class="btn indicators" id="popover_3" data-bs-toggle="popover" data-bs-placement="left">
                             <i class="bi bi-list-task"></i>
                         </button>
                         <span class="ms-2">
@@ -233,6 +233,7 @@
 </div>
 
 <script>
+    let people = [];
     let isTimerStart = false;
 
     $(document).ready(function(){
@@ -249,6 +250,8 @@
             // join as host
             $('#joinFormModal').modal('show');
 
+            people.push('yinan');
+            $('#self_img').attr('src', './img/camera/yinan.png');
             prototype.attr('class', 'hidden');
 
             //add exit button popover
@@ -258,6 +261,8 @@
             $('#joinFormModal').modal('show');
 
             //only joiner join would see prototype participants
+            people.push('victor');
+            $('#self_img').attr('src', './img/camera/victor.png');
             prototype.removeClass('hidden');
             initializePrototypePopover();
 
