@@ -18,7 +18,7 @@ $('#videoControlBtnGroup button').on("click", function() {
     if(id === 'mic') updateMic(btn, btn_icon);
 });
 
-$('#sessionGoal_1').on('input', function() {
+$('#sessionGoal_0').on('input', function() {
     updateSessionGoalInput(this);
 });
 
@@ -120,7 +120,7 @@ let goals_completion = [false];
 let numOfGoals = 1;
 
 function updateSessionGoalInput(input) {
-    let task_index = parseInt(input.id.split("_")[1]) - 1;
+    let task_index = parseInt(input.id.split("_")[1]);
     goals[task_index] = input.value;
     console.log(goals[task_index]);
 }
@@ -140,14 +140,14 @@ function checkEmptyOrNot(element) {
 }
 
 function addOneMoreSessionGoalTextInputBelow(icon){
+    const session_id = "sessionGoal_" + numOfGoals;
+
     numOfGoals += 1;
     goals.push("");
     goals_completion.push(false);
 
     if(numOfGoals === MAX_GOALS)
         $(icon).addClass("icon-disabled");
-
-    let session_id = "sessionGoal_" + numOfGoals;
 
     const additionalToDoInput =
         `<div class="row mt-2">` +
@@ -175,8 +175,8 @@ function joinSession() {
 
 
     goals.forEach((goal_str, index) => {
-        content_str += getTaskStr(index + 1, name, goal_str);
-        indicator_str += getIndicatorStr(index + 1, name)
+        content_str += getTaskStr(index, name, goal_str);
+        indicator_str += getIndicatorStr(index, name)
     });
 
     //update popover
@@ -211,7 +211,6 @@ function getIndicatorStr(index, name) {
     let i_id = "i_" + name + "_" + index;
     return '<i class="bi bi-circle-fill ms-2" id="' + i_id + '"></i>'
 }
-
 
 function checkTask(element) {
     let index = parseInt(element.id.split("_")[1]);
