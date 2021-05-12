@@ -1,5 +1,4 @@
 // click events
-
 $(document).on("click", ".tdl-check", function() {
     checkTask(this);
 });
@@ -19,24 +18,9 @@ $('#videoControlBtnGroup button').on("click", function() {
     if(id === 'mic') updateMic(btn, btn_icon);
 });
 
-$('#newSessionForm input').on('input', function() {
-    let task_index = parseInt(this.id.split("_")[1]);
-    goals[task_index] = this.value;
-    console.log(goals[task_index]);
+$('#sessionGoal_1').on('input', function() {
+    updateSessionGoalInput(this);
 });
-
-// Exit session
-function initializeHostExitBtnPopover(exitBtn) {
-    const html = '<a href="common.html"><button type="button" class="btn btn-secondary">Leave Meeting</button></a>' +
-        '<button type="button" class="btn btn-danger ms-2" data-bs-toggle="modal" data-bs-target="#sessionSummaryModal">End Sessions for All</button>';
-
-    exitBtn.popover({
-        sanitize:false,
-        trigger: 'focus',
-        html: true,
-        content : html
-    })
-}
 
 // Screen Control Update
 const people = ['sri', 'cinta', 'susanto', 'sinta'];
@@ -131,92 +115,14 @@ function updateMic(btn, icon) {
 // To do List
 const MAX_GOALS = 5;
 const newSessionForm = $('#newSessionForm');
-let goals = [];
-let goals_completion = [];
-// let warning = $('#warning');
-//let goalsPreviewList = $('#goalsPreviewList');
+let goals = [""]; // initialize one for default one input
+let goals_completion = [false];
 let numOfGoals = 1;
 
-function addSessionGoalToList() {
-    let goal_str = $('#sessionGoal').val();
-
-    if(goal_str === '') {
-        warning.html("Please only add non-empty goal!");
-    }else{
-        if(goals.length >= MAX_GOALS) {
-            warning.html("Please only enter at maximum 5 goals per session!");
-        } else {
-            warning.html("");
-            $('#sessionGoal').val('');
-            updateGoalPreviewListHtmlStr(goal_str);
-            goals.push(goal_str);
-            goals_completion.push(false);
-
-            // enable the join button
-            if(goals.length === 1)
-                $('#joinBtn').prop("disabled", false);
-        }
-    }
-
-}
-
-function updateGoalPreviewListHtmlStr(goal_str) {
-    let exist_list_str = goalsPreviewList.html();
-    let new_goal_str = '<li>' + goal_str + '</li>';
-
-    goalsPreviewList.html(exist_list_str + new_goal_str);
-}
-
-
-function addOneMoreSessionGoalTextInputBelow(icon){
-    // if (numOfGoals >= MAX_GOALS) {
-    //     $(icon).addClass("icon-disabled");
-    // } else {
-    //     numOfGoals += 1;
-    //
-    //     if(numOfGoals === MAX_GOALS)
-    //         $(icon).addClass("icon-disabled");
-    //
-    //     const additionalToDoInput =
-    //             `<div class="row mt-2">` +
-    //                 `<div class="col-7 offset-3">` +
-    //                     `<input type="text" id="sessionGoal${numOfGoals}" class="form-control" aria-describedby="sessionGoalTextInput"  onkeyup="checkEmptyOrNot(this)"/>` +
-    //                 `</div>` +
-    //             `</div>`;
-    //     const sessionFormHtml = newSessionForm.html();
-    //
-    //     newSessionForm.html(sessionFormHtml + additionalToDoInput);
-    //
-    //
-    //     // // temporarily remove warning div
-    //     // let warningDiv = newSessionForm.lastElementChild;
-    //     // newSessionForm.removeChild(warningDiv);
-    //     //
-    //     // // append new sessionGoal text field by creating a temporary parent element, extracting the child, and appending to newSessionForm
-    //     // let wrapper = document.createElement('div');
-    //     // wrapper.innerHTML = additionalToDoInput;
-    //     // let newGoalDiv = wrapper.firstChild;
-    //     // newSessionForm.appendChild(newGoalDiv);
-    //     //
-    //     // // append the remove warning div back
-    //     // newSessionForm.appendChild(warningDiv);
-    // }
-
-    numOfGoals += 1;
-    goals.push("");
-    goals_completion.push(false);
-
-    if(numOfGoals === MAX_GOALS)
-        $(icon).addClass("icon-disabled");
-
-    const additionalToDoInput =
-        `<div class="row mt-2">` +
-            `<div class="col-7 offset-3">` +
-                `<input type="text" id="sessionGoal_${numOfGoals}" class="form-control" aria-describedby="sessionGoalTextInput"  onkeyup="checkEmptyOrNot(this)"/>` +
-            `</div>` +
-        `</div>`;
-
-    newSessionForm.append(additionalToDoInput);
+function updateSessionGoalInput(input) {
+    let task_index = parseInt(input.id.split("_")[1]) - 1;
+    goals[task_index] = input.value;
+    console.log(goals[task_index]);
 }
 
 function checkEmptyOrNot(element) {
@@ -226,41 +132,37 @@ function checkEmptyOrNot(element) {
     } else {
         let isAllInputEmpty = true;
         goals.forEach((goal) => {
-           isAllInputEmpty = isAllInputEmpty && goal === "";
+            isAllInputEmpty = isAllInputEmpty && goal === "";
         });
 
         if(isAllInputEmpty) $('#joinBtn').prop("disabled", true);
     }
 }
 
-// function joinSession() {
-//     // update Sri's TDL
-//     const name = "sri";
-//     let popover = $('#popover-sri');
-//     let indicator = $('#i_sri');
-//     let content_str = '', indicator_str = '';
+function addOneMoreSessionGoalTextInputBelow(icon){
+    numOfGoals += 1;
+    goals.push("");
+    goals_completion.push(false);
 
+    if(numOfGoals === MAX_GOALS)
+        $(icon).addClass("icon-disabled");
 
-//     goals.forEach((goal_str, index) => {
-//         content_str += getTaskStr(index, name, goal_str);
-//         indicator_str += getIndicatorStr(index, name)
-//     });
+    let session_id = "sessionGoal_" + numOfGoals;
 
-//     //update popover
-//     popover.popover({
-//         html: true,
-//         title: "SRI'S GOALS",
-//         content: content_str
-//     });
+    const additionalToDoInput =
+        `<div class="row mt-2">` +
+            `<div class="col-7 offset-3">` +
+                `<input type="text" id="${session_id}" class="form-control" aria-describedby="sessionGoalTextInput"  onkeyup="checkEmptyOrNot(this)"/>` +
+            `</div>` +
+        `</div>`;
 
-//     //update indicators shown on camera
-//     indicator.html(indicator_str);
+    newSessionForm.append(additionalToDoInput);
 
-//     //start timer
-//     let publicDisplay = document.querySelector('#tomatoTimer1');
-//     let largeTimer = document.querySelector('#largeTimer');
-//     startPublicTimer(countDownTimeInSec, publicDisplay, largeTimer);
-// }
+    //initialize the oninput listen event
+    $('#' + session_id).on('input', function() {
+        updateSessionGoalInput(this);
+    });
+}
 
 function joinSession() {
     // update Sri's TDL
@@ -268,23 +170,14 @@ function joinSession() {
     let popover = $('#popover-sri');
     let indicator = $('#i_sri');
     let content_str = '', indicator_str = '';
-    let isEditMode = document.querySelector('#joinBtn').innerHTML === "Save Changes";
 
-    for (i=0; i<numOfGoals; i++) {
-        let goal_str = document.querySelector('#sessionGoal' + (i+1)).value;
-        // only push goals when the user first join the session or when the user 
-        // tries to edit session goals and add additional goals
-        if (!isEditMode || goals.length < i+1) {
-            goals.push(goal_str);
-            goals_completion.push(false);
-        } else {
-            goals[i] = goal_str;
-        }
-        
-        let index = i;
-        content_str += getTaskStr(index, name, goal_str);
-        indicator_str += getIndicatorStr(index, name)
-    };
+    console.log(goals);
+
+
+    goals.forEach((goal_str, index) => {
+        content_str += getTaskStr(index + 1, name, goal_str);
+        indicator_str += getIndicatorStr(index + 1, name)
+    });
 
     //update popover
     popover.popover({
@@ -297,11 +190,9 @@ function joinSession() {
     indicator.html(indicator_str);
 
     //start timer
-    if (!isEditMode) {
-        let publicDisplay = document.querySelector('#tomatoTimer1');
-        let largeTimer = document.querySelector('#largeTimer');
-        startPublicTimer(countDownTimeInSec, publicDisplay, largeTimer);
-    }
+    let publicDisplay = document.querySelector('#tomatoTimer1');
+    let largeTimer = document.querySelector('#largeTimer');
+    startPublicTimer(countDownTimeInSec, publicDisplay, largeTimer);
 }
 
 function getTaskStr(index, name, goal_str) {
@@ -350,6 +241,19 @@ function modifySessionGoals() {
     document.querySelector("#joinBtn").innerHTML = "Save Changes";
 
     $('#joinFormModal').modal('show');
+}
+
+// Exit session
+function initializeHostExitBtnPopover(exitBtn) {
+    const html = '<a href="common.html"><button type="button" class="btn btn-secondary">Leave Meeting</button></a>' +
+        '<button type="button" class="btn btn-danger ms-2" data-bs-toggle="modal" data-bs-target="#sessionSummaryModal">End Sessions for All</button>';
+
+    exitBtn.popover({
+        sanitize:false,
+        trigger: 'focus',
+        html: true,
+        content : html
+    })
 }
 
 //////////////////// Prototype Input ///////////////////////////////////////////////////////////////////////////////////
