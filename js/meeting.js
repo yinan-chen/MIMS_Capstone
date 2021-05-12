@@ -120,9 +120,9 @@ let goals_completion = [false];
 let numOfGoals = 1;
 let isEditTDL = false;
 
-function updateSessionGoalInput(input) {
-    let task_index = parseInt(input.id.split("_")[1]);
-    goals[task_index] = input.value;
+function updateSessionGoalInput(element) {
+    let task_index = parseInt(element.id.split("_")[1]);
+    goals[task_index] = element.value;
     console.log(goals[task_index]);
 }
 
@@ -140,7 +140,7 @@ function checkEmptyOrNot(element) {
     }
 }
 
-function addOneMoreSessionGoalTextInputBelow(icon){
+function addOneMoreSessionGoalTextInputBelow(element){
     const session_id = "sessionGoal_" + numOfGoals;
 
     numOfGoals += 1;
@@ -148,7 +148,7 @@ function addOneMoreSessionGoalTextInputBelow(icon){
     goals_completion.push(false);
 
     if(numOfGoals === MAX_GOALS)
-        $(icon).addClass("icon-disabled");
+        $(element).addClass("icon-disabled");
 
     const additionalToDoInput =
         `<div class="row mt-2">` +
