@@ -118,6 +118,7 @@ const newSessionForm = $('#newSessionForm');
 let goals = [""]; // initialize one for default one input
 let goals_completion = [false];
 let numOfGoals = 1;
+let isModifyMode = false;
 
 function updateSessionGoalInput(input) {
     let task_index = parseInt(input.id.split("_")[1]);
@@ -179,20 +180,27 @@ function joinSession() {
         indicator_str += getIndicatorStr(index, name)
     });
 
-    //update popover
+    if(isModifyMode) {
+        // discard the old popover
+       popover.popover('dispose');
+    } else {
+        //start timer
+        let publicDisplay = document.querySelector('#tomatoTimer1');
+        let largeTimer = document.querySelector('#largeTimer');
+        startPublicTimer(countDownTimeInSec, publicDisplay, largeTimer);
+
+        isModifyMode = true;
+    }
+
+    //initialize TDL popover
     popover.popover({
         html: true,
         title: "SRI'S GOALS",
         content: content_str
     });
 
-    //update indicators shown on camera
+    //initialize indicators shown on camera
     indicator.html(indicator_str);
-
-    //start timer
-    let publicDisplay = document.querySelector('#tomatoTimer1');
-    let largeTimer = document.querySelector('#largeTimer');
-    startPublicTimer(countDownTimeInSec, publicDisplay, largeTimer);
 }
 
 function getTaskStr(index, name, goal_str) {
