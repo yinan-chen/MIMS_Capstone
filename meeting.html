@@ -25,7 +25,7 @@
 <body>
 
 <div class="container my-4 p-4">
-    <h2><strong>PYTHON GROUP STUDY</strong></h2>
+    <h2 id="sessionTitle"><strong>PYTHON GROUP STUDY</strong></h2>
 
     <!-- control row -->
     <div class="row mt-4">
@@ -198,7 +198,7 @@
                     <div class="row">
                         <div class="col-10 offset-1">
                             <h2><strong>Congratulations! You have finished:</strong></h2>
-                            <h6 class="mt-4 ps-3 color-green"><strong>PYTHON GROUP STUDY</strong></h6>
+                            <h6 class="mt-4 ps-3 color-green" id="sessionTitleSummary"><strong>PYTHON GROUP STUDY</strong></h6>
                             <div class="mt-4">
                                 <p><i class="bi bi-dot"></i> These are the badges you and your group has unlocked:</p>
                                 <div class="row center">
@@ -249,6 +249,11 @@
         if(fromJoinBtn === "0") {
             // join as host
             $('#joinFormModal').modal('show');
+
+            // update session title with form input value
+            const sessionTopic = urlParams.get('sessionTopic').toUpperCase();
+            $('#sessionTitle').html(`<strong>${sessionTopic}</strong>`);
+            $('#sessionTitleSummary').html(`<strong>${sessionTopic}</strong>`);
 
             people.push('yinan');
             $('#self_img').attr('src', './img/camera/yinan.png');
