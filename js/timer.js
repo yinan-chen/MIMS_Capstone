@@ -1,4 +1,4 @@
-var countDownTimeInSec = 60 * 10;
+var countDownTimeInSec = 60 * 25;
 var privateCountDownTimeInSec = 60 * 45;
 
 function startPublicTimer(duration, display) {
