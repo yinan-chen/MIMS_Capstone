@@ -206,6 +206,7 @@ function joinSession() {
 
     //initialize TDL popover
     popover.popover({
+        placement: 'left',
         html: true,
         title: people[0].toUpperCase() + "'S GOALS",
         content: content_str
@@ -318,6 +319,7 @@ function initializeEachPrototype(id, goals, completion) {
     });
 
     popover.popover({
+        placement: 'left',
         html: true,
         title: people[id].toUpperCase() + "'S GOALS",
         content: content_str
