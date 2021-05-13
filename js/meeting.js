@@ -242,7 +242,7 @@ function checkTask(element) {
     updateTDLIcon($(element), goals_completion[index]);
 
     // update associated indicator icon
-    let indicator_id = "#i_sri_" + index;
+    let indicator_id = "#i_" + people[0] + "_" + index;
     updateTDLIcon($(indicator_id), goals_completion[index]);
 
     // if complete at least one goal => activate badge
